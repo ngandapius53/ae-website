@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { ArrowRight, PenTool, Palette, Type, Image as ImageIcon, Megaphone } from 'lucide-react'
 import styles from '@/app/graphic-design/page.module.css'
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+
 export const metadata: Metadata = {
   title: 'Graphic Design - AE',
   description: 'Creative graphic design services for your brand.',
@@ -17,16 +19,16 @@ const services = [
 ]
 
 const portfolio = [
-  { title: 'Client Work 01', category: 'Branding', image: '/graphic-design/gd-01.jpeg' },
-  { title: 'Client Work 02', category: 'Branding', image: '/graphic-design/gd-02.jpeg' },
-  { title: 'Client Work 03', category: 'Branding', image: '/graphic-design/gd-03.jpeg' },
-  { title: 'Client Work 04', category: 'Branding', image: '/graphic-design/gd-04.jpeg' },
-  { title: 'Client Work 05', category: 'Branding', image: '/graphic-design/gd-05.jpeg' },
-  { title: 'Client Work 06', category: 'Branding', image: '/graphic-design/gd-06.jpeg' },
-  { title: 'Client Work 07', category: 'Branding', image: '/graphic-design/gd-07.jpeg' },
-  { title: 'Client Work 08', category: 'Branding', image: '/graphic-design/gd-08.jpeg' },
-  { title: 'Client Work 09', category: 'Branding', image: '/graphic-design/gd-09.jpeg' },
-  { title: 'Client Work 10', category: 'Branding', image: '/graphic-design/gd-10.jpeg' },
+  { title: 'Client Work 01', category: 'Branding', image: `${basePath}/graphic-design/gd-01.jpeg` },
+  { title: 'Client Work 02', category: 'Branding', image: `${basePath}/graphic-design/gd-02.jpeg` },
+  { title: 'Client Work 03', category: 'Branding', image: `${basePath}/graphic-design/gd-03.jpeg` },
+  { title: 'Client Work 04', category: 'Branding', image: `${basePath}/graphic-design/gd-04.jpeg` },
+  { title: 'Client Work 05', category: 'Branding', image: `${basePath}/graphic-design/gd-05.jpeg` },
+  { title: 'Client Work 06', category: 'Branding', image: `${basePath}/graphic-design/gd-06.jpeg` },
+  { title: 'Client Work 07', category: 'Branding', image: `${basePath}/graphic-design/gd-07.jpeg` },
+  { title: 'Client Work 08', category: 'Branding', image: `${basePath}/graphic-design/gd-08.jpeg` },
+  { title: 'Client Work 09', category: 'Branding', image: `${basePath}/graphic-design/gd-09.jpeg` },
+  { title: 'Client Work 10', category: 'Branding', image: `${basePath}/graphic-design/gd-10.jpeg` },
 ]
 
 export default function GraphicDesignPage() {
