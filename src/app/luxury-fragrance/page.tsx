@@ -5,11 +5,13 @@ import Image from 'next/image'
 import { X } from 'lucide-react'
 import styles from './page.module.css'
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+
 const fragrances = Array.from({ length: 23 }, (_, index) => {
   const imageNumber = String(index + 1).padStart(2, '0')
   return {
     id: index + 1,
-    image: `/luxury-fragrance/lf-${imageNumber}.jpeg`,
+    image: `${basePath}/luxury-fragrance/lf-${imageNumber}.jpeg`,
   }
 })
 
@@ -21,7 +23,7 @@ export default function LuxuryFragrance() {
       <section className={styles.hero}>
         <div className={styles.heroOverlay}></div>
         <Image
-          src="/luxury-fragrance/lf-01.jpeg"
+          src={`${basePath}/luxury-fragrance/lf-01.jpeg`}
           alt="Luxury Fragrance"
           fill
           className={styles.heroImage}
