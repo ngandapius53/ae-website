@@ -22,7 +22,7 @@ export default function Footer() {
               </p>
               <div className={styles.social}>
                 <a
-                  href="https://www.facebook.com/share/v/1FJAP5pQUe/"
+                  href="https://www.facebook.com/share/1G4xN5pg7s/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.socialLink}
