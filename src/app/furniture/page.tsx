@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Sofa, Armchair, Lamp, Table } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import styles from '@/app/furniture/page.module.css'
 
 export const metadata: Metadata = {
@@ -9,20 +9,43 @@ export const metadata: Metadata = {
   description: 'Discover premium furniture collections for your home and office.',
 }
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+
 const categories = [
-  { icon: Sofa, title: 'Sofas & Couches', count: 45, image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=400&fit=crop' },
-  { icon: Armchair, title: 'Chairs & Seating', count: 38, image: 'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=400&h=400&fit=crop' },
-  { icon: Table, title: 'Tables & Desks', count: 52, image: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=400&h=400&fit=crop' },
-  { icon: Lamp, title: 'Lighting', count: 67, image: 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=400&h=400&fit=crop' },
+  { title: 'Bedroom Furniture', count: 11, image: `${basePath}/furniture/work/bedframe-upholstered-gray.jpeg` },
+  { title: 'Sofa Sets', count: 6, image: `${basePath}/furniture/work/sectional-sofa-teal.jpeg` },
+  { title: 'TV & Console Units', count: 6, image: `${basePath}/furniture/work/media-wall-unit-modern.jpeg` },
+  { title: 'Kitchen & Storage', count: 5, image: `${basePath}/furniture/work/kitchen-hutch-gray-white.jpeg` },
 ]
 
 const featured = [
-  { name: 'Modern Sectional Sofa', price: '$2,499', category: 'Living Room', image: 'https://images.unsplash.com/photo-1550254478-ead40cc54513?w=400&h=400&fit=crop' },
-  { name: 'Executive Office Desk', price: '$1,299', category: 'Office', image: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=400&h=400&fit=crop' },
-  { name: 'Velvet Accent Chair', price: '$699', category: 'Living Room', image: 'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=400&h=400&fit=crop' },
-  { name: 'Marble Coffee Table', price: '$899', category: 'Living Room', image: 'https://images.unsplash.com/photo-1532372320572-cda25653a26d?w=400&h=400&fit=crop' },
-  { name: 'King Size Platform Bed', price: '$1,899', category: 'Bedroom', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400&h=400&fit=crop' },
-  { name: 'Designer Floor Lamp', price: '$349', category: 'Lighting', image: 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=400&h=400&fit=crop' },
+  { name: 'Matte Black 3-Door Wardrobe', category: 'Bedroom', image: `${basePath}/furniture/work/wardrobe-matte-black.jpeg` },
+  { name: 'Walnut Classic Wardrobe', category: 'Bedroom', image: `${basePath}/furniture/work/wardrobe-walnut-classic.jpeg` },
+  { name: 'Espresso Dressing Table', category: 'Bedroom', image: `${basePath}/furniture/work/dressing-table-espresso.jpeg` },
+  { name: 'Black and White Bedroom Set', category: 'Bedroom', image: `${basePath}/furniture/work/bedroom-set-black-white.jpeg` },
+  { name: 'Midnight Mirror Dresser', category: 'Bedroom', image: `${basePath}/furniture/work/dresser-mirror-midnight.jpeg` },
+  { name: 'White Panel Bed Frame', category: 'Bedroom', image: `${basePath}/furniture/work/bedframe-white-panel.jpeg` },
+  { name: 'Charcoal Display Cabinet', category: 'Storage', image: `${basePath}/furniture/work/display-cabinet-charcoal-oak.jpeg` },
+  { name: 'White Orange Wardrobe Vanity', category: 'Storage', image: `${basePath}/furniture/work/wardrobe-vanity-white-orange.jpeg` },
+  { name: 'Gray White Kitchen Hutch', category: 'Kitchen', image: `${basePath}/furniture/work/kitchen-hutch-gray-white.jpeg` },
+  { name: 'Orange Showcase Sideboard', category: 'Kitchen', image: `${basePath}/furniture/work/sideboard-showcase-orange.jpeg` },
+  { name: 'Upholstered Gray Bed Frame', category: 'Bedroom', image: `${basePath}/furniture/work/bedframe-upholstered-gray.jpeg` },
+  { name: 'Compact White Kitchen Unit', category: 'Kitchen', image: `${basePath}/furniture/work/kitchen-unit-compact-white.jpeg` },
+  { name: 'Compact Black Orange Kitchen Unit', category: 'Kitchen', image: `${basePath}/furniture/work/kitchen-unit-compact-black-orange.jpeg` },
+  { name: 'Natural Wood Rolling Gas Cart', category: 'Kitchen', image: `${basePath}/furniture/work/rolling-gas-cart-natural-wood.jpeg` },
+  { name: 'Ivory Fluted Sideboard Set', category: 'Storage', image: `${basePath}/furniture/work/fluted-sideboard-ivory-set.jpeg` },
+  { name: 'Classic White TV Console', category: 'TV Unit', image: `${basePath}/furniture/work/tv-console-classic-white.jpeg` },
+  { name: 'Oak White Media Console', category: 'TV Unit', image: `${basePath}/furniture/work/media-console-oak-white.jpeg` },
+  { name: 'White Gold Fluted TV Stand', category: 'TV Unit', image: `${basePath}/furniture/work/fluted-tv-stand-white-gold.jpeg` },
+  { name: 'Sky Blue Lounge Set', category: 'Sofa', image: `${basePath}/furniture/work/lounge-set-sky-blue.jpeg` },
+  { name: 'Teal Sectional Sofa', category: 'Sofa', image: `${basePath}/furniture/work/sectional-sofa-teal.jpeg` },
+  { name: 'Light Gray Sectional Sofa', category: 'Sofa', image: `${basePath}/furniture/work/sectional-sofa-light-gray.jpeg` },
+  { name: 'Mid-Century Oak TV Stand', category: 'TV Unit', image: `${basePath}/furniture/work/tv-stand-midcentury-oak.jpeg` },
+  { name: 'Black Fluted Coffee Table', category: 'Coffee Table', image: `${basePath}/furniture/work/coffee-table-fluted-black.jpeg` },
+  { name: 'Teal Chesterfield Sofa', category: 'Sofa', image: `${basePath}/furniture/work/chesterfield-sofa-teal.jpeg` },
+  { name: 'Gray L-Shaped Sofa', category: 'Sofa', image: `${basePath}/furniture/work/l-shaped-sofa-gray.jpeg` },
+  { name: 'Modern Media Wall Unit', category: 'TV Unit', image: `${basePath}/furniture/work/media-wall-unit-modern.jpeg` },
+  { name: 'Modern Bedroom Feature Wall', category: 'Interior', image: `${basePath}/furniture/work/bedroom-feature-wall-modern.jpeg` },
 ]
 
 export default function FurniturePage() {
@@ -31,8 +54,8 @@ export default function FurniturePage() {
       <section className={styles.hero}>
         <div className={styles.heroBg}>
           <Image
-            src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=2400&auto=format&fit=crop"
-            alt="Modern sofa in living room"
+            src={`${basePath}/furniture/work/sectional-sofa-teal.jpeg`}
+            alt="Furniture collection showcase"
             fill
             priority
             sizes="100vw"
@@ -73,11 +96,11 @@ export default function FurniturePage() {
         <div className="container">
           <div className="text-center">
             <h2 className="section-title">Featured Collection</h2>
-            <p className="section-subtitle">Our most popular furniture pieces</p>
+            <p className="section-subtitle">Crafted pieces from our latest workshop collection</p>
           </div>
           <div className={styles.featuredGrid}>
-            {featured.map((item, index) => (
-              <div key={index} className={styles.productCard}>
+            {featured.map((item) => (
+              <div key={item.image} className={styles.productCard}>
                 <div className={styles.productImage}>
                   <Image
                     src={item.image}
