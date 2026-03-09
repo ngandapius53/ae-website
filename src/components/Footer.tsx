@@ -58,11 +58,11 @@ export default function Footer() {
                 </a>
                 <a href="#" className={styles.socialLink} aria-label="Open X profile"><XLogoIcon size={20} /></a>
                 <a
-                  href="https://wa.me/256708924166"
+                  href="https://wa.me/966583625047?text=Hello%20ARAH%20ENTERPRISES%2C%20I%20want%20to%20chat%20with%20your%20business."
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.socialLink}
-                  aria-label="Open WhatsApp chat"
+                  aria-label="Open WhatsApp business chat"
                 >
                   <WhatsAppLogoIcon size={20} />
                 </a>
