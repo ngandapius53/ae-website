@@ -2,8 +2,16 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone, MapPin } from 'lucide-react'
+import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react'
 import styles from '@/components/Footer.module.css'
+
+function XLogoIcon({ size = 20 }: { size?: number }) {
+  return (
+    <svg viewBox="0 0 24 24" width={size} height={size} fill="currentColor" aria-hidden="true">
+      <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.847h-7.406l-5.8-7.584-6.63 7.584H.48l8.6-9.83L0 1.154h7.594l5.243 6.932L18.9 1.153Zm-1.291 19.492h2.039L6.486 3.24H4.298L17.61 20.645Z" />
+    </svg>
+  )
+}
 
 export default function Footer() {
   const pathname = usePathname()
@@ -39,7 +47,7 @@ export default function Footer() {
                 >
                   <Instagram size={20} />
                 </a>
-                <a href="#" className={styles.socialLink}><Twitter size={20} /></a>
+                <a href="#" className={styles.socialLink} aria-label="Open X profile"><XLogoIcon size={20} /></a>
                 <a href="#" className={styles.socialLink}><Linkedin size={20} /></a>
               </div>
             </div>
