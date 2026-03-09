@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   description: 'Find your dream property with our comprehensive real estate services.',
 }
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+
 const services = [
   { icon: Search, title: 'Property Search', description: 'Find the perfect property matching your criteria and budget.', href: '/contact?service=real-estate&topic=property-search' },
   { icon: Home, title: 'Buy & Sell', description: 'Expert guidance through buying or selling your property.', href: '/contact?service=real-estate&topic=buy-and-sell' },
@@ -26,12 +28,12 @@ const properties = [
 ]
 
 const interiors = [
-  { title: 'Minimalist Living', image: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=600&h=400&fit=crop' },
-  { title: 'Modern Kitchen', image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop' },
-  { title: 'Luxury Bedroom', image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&h=400&fit=crop' },
-  { title: 'Elegant Dining', image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop' },
-  { title: 'Cozy Workspace', image: 'https://images.unsplash.com/photo-1516383740770-fbcc5ccbece0?w=600&h=400&fit=crop' },
-  { title: 'Spa Bathroom', image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=600&h=400&fit=crop' },
+  { title: 'Minimal Room Finish', image: `${basePath}/decoration/sarah-enterprise/interior-room-finish-minimal.jpeg` },
+  { title: 'Modern Living Room Finish', image: `${basePath}/decoration/sarah-enterprise/living-room-finish-gray-modern.jpeg` },
+  { title: 'LED Corridor Ceiling', image: `${basePath}/decoration/sarah-enterprise/ceiling-led-corridor-frame.jpeg` },
+  { title: 'Modern Bathroom Vanity', image: `${basePath}/decoration/sarah-enterprise/bathroom-vanity-modern-gray.jpeg` },
+  { title: 'TV Niche Feature Wall', image: `${basePath}/decoration/sarah-enterprise/tv-wall-niche-lighting.jpeg` },
+  { title: 'Illuminated TV Frame Wall', image: `${basePath}/decoration/sarah-enterprise/tv-wall-frame-illuminated.jpeg` },
 ]
 
 export default function RealEstatePage() {

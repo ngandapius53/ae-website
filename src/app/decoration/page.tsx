@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   description: 'Transform your space with expert interior decoration services.',
 }
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+
 const features = [
   {
     icon: Home,
@@ -28,12 +30,18 @@ const features = [
 ]
 
 const projects = [
-  { title: 'Modern Living Room', category: 'Residential', image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&h=600&fit=crop' },
-  { title: 'Luxury Bedroom', category: 'Residential', image: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=600&h=600&fit=crop' },
-  { title: 'Corporate Office', category: 'Commercial', image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=600&fit=crop' },
-  { title: 'Restaurant Interior', category: 'Commercial', image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=600&fit=crop' },
-  { title: 'Kitchen Design', category: 'Residential', image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=600&fit=crop' },
-  { title: 'Retail Space', category: 'Commercial', image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=600&fit=crop' },
+  { title: 'LED Hallway Ceiling', category: 'Ceiling Works', image: `${basePath}/decoration/sarah-enterprise/ceiling-led-hallway-linear.jpeg` },
+  { title: 'LED Corridor Ceiling', category: 'Ceiling Works', image: `${basePath}/decoration/sarah-enterprise/ceiling-led-corridor-frame.jpeg` },
+  { title: 'Modern Bathroom Vanity', category: 'Bathroom Finish', image: `${basePath}/decoration/sarah-enterprise/bathroom-vanity-modern-gray.jpeg` },
+  { title: 'Gray Living Room Finish', category: 'Residential Finish', image: `${basePath}/decoration/sarah-enterprise/living-room-finish-gray-modern.jpeg` },
+  { title: 'Gypsum Yin-Yang Wall Art', category: 'Wall Feature', image: `${basePath}/decoration/sarah-enterprise/gypsum-wall-art-yin-yang.jpeg` },
+  { title: 'Geometric Divider Shelves', category: 'Partition Design', image: `${basePath}/decoration/sarah-enterprise/gypsum-divider-box-shelves.jpeg` },
+  { title: 'Sculpted Gypsum Divider', category: 'Partition Design', image: `${basePath}/decoration/sarah-enterprise/gypsum-divider-sculpted-curves.jpeg` },
+  { title: 'Decorative Niche Wall', category: 'Wall Niches', image: `${basePath}/decoration/sarah-enterprise/display-niche-wall-decor.jpeg` },
+  { title: 'TV Niche Lighting Wall', category: 'Media Wall', image: `${basePath}/decoration/sarah-enterprise/tv-wall-niche-lighting.jpeg` },
+  { title: 'Circular TV Wall Concepts', category: 'Media Wall', image: `${basePath}/decoration/sarah-enterprise/tv-wall-circular-concepts-collage.jpeg` },
+  { title: 'Illuminated TV Frame Wall', category: 'Media Wall', image: `${basePath}/decoration/sarah-enterprise/tv-wall-frame-illuminated.jpeg` },
+  { title: 'Minimal Interior Finish', category: 'Final Finish', image: `${basePath}/decoration/sarah-enterprise/interior-room-finish-minimal.jpeg` },
 ]
 
 export default function DecorationPage() {
@@ -42,8 +50,8 @@ export default function DecorationPage() {
       <section className={styles.hero}>
         <div className={styles.heroBg}>
           <Image
-            src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2400&auto=format&fit=crop"
-            alt="Elegant interior living room"
+            src={`${basePath}/decoration/sarah-enterprise/ceiling-led-hallway-linear.jpeg`}
+            alt="LED hallway ceiling decoration"
             fill
             priority
             sizes="100vw"
