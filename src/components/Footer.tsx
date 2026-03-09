@@ -30,7 +30,15 @@ export default function Footer() {
                 >
                   <Facebook size={20} />
                 </a>
-                <a href="#" className={styles.socialLink}><Instagram size={20} /></a>
+                <a
+                  href="https://www.instagram.com/arahenterprises11?igsh=cndveTZtdWVvazBk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.socialLink}
+                  aria-label="Open Instagram profile"
+                >
+                  <Instagram size={20} />
+                </a>
                 <a href="#" className={styles.socialLink}><Twitter size={20} /></a>
                 <a href="#" className={styles.socialLink}><Linkedin size={20} /></a>
               </div>
