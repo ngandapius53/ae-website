@@ -21,7 +21,15 @@ export default function Footer() {
                 creative graphic design, and real estate solutions.
               </p>
               <div className={styles.social}>
-                <a href="#" className={styles.socialLink}><Facebook size={20} /></a>
+                <a
+                  href="https://www.facebook.com/share/v/1FJAP5pQUe/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.socialLink}
+                  aria-label="Open Facebook profile"
+                >
+                  <Facebook size={20} />
+                </a>
                 <a href="#" className={styles.socialLink}><Instagram size={20} /></a>
                 <a href="#" className={styles.socialLink}><Twitter size={20} /></a>
                 <a href="#" className={styles.socialLink}><Linkedin size={20} /></a>
