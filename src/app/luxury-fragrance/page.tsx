@@ -23,8 +23,8 @@ export default function LuxuryFragrance() {
       <section className={styles.hero}>
         <div className={styles.heroOverlay}></div>
         <Image
-          src={`${basePath}/luxury-fragrance/lf-01.jpeg`}
-          alt="Luxury Fragrance"
+          src={`${basePath}/luxury-fragrance/lf-13.jpeg`}
+          alt="Stronger With You fragrance collection"
           fill
           className={styles.heroImage}
           priority
