@@ -24,6 +24,7 @@ const searchRoutes = [
   { href: '/luxury-fragrance', keywords: ['luxury fragrance', 'fragrance', 'perfume', 'scent'] },
   { href: '/graphic-design', keywords: ['graphic design', 'design', 'branding', 'logo'] },
   { href: '/real-estate', keywords: ['real estate', 'property', 'house', 'apartment'] },
+  { href: '/checkout', keywords: ['checkout', 'order', 'payment'] },
   { href: '/about', keywords: ['about', 'team', 'company'] },
   { href: '/contact', keywords: ['contact', 'email', 'phone'] },
 ]

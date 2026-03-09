@@ -49,7 +49,7 @@ export default function Footer() {
             <h4 className={styles.columnTitle}>Quick Links</h4>
             <Link href="/about" className={styles.link}>About Us</Link>
             <Link href="/contact" className={styles.link}>Contact</Link>
-            <Link href="/portfolio" className={styles.link}>Portfolio</Link>
+            <Link href="/checkout" className={styles.link}>Checkout Info</Link>
             <Link href="/contact" className={styles.link}>Get Quote</Link>
           </div>
 
