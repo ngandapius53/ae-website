@@ -1,11 +1,11 @@
-﻿.header {
+.header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
   padding: 20px 0;
-  transition: all 0.08s ease;
+  transition: all 0.05s ease;
   background: transparent;
 }
 
@@ -98,7 +98,7 @@
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
-  transition: background 0.06s ease, transform 0.06s ease;
+  transition: background 0.03s ease, transform 0.03s ease;
 }
 
 .searchSubmit:hover {
@@ -127,7 +127,7 @@
   font-size: 14px;
   text-decoration: none;
   position: relative;
-  transition: color 0.06s ease, transform 0.06s ease;
+  transition: color 0.03s ease, transform 0.03s ease;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
   white-space: nowrap;
@@ -141,7 +141,7 @@
   width: 0;
   height: 2px;
   background: #e94560;
-  transition: width 0.06s ease;
+  transition: width 0.03s ease;
 }
 
 .navLink:hover::after {
@@ -150,6 +150,11 @@
 
 .navLink:hover {
   color: #e94560;
+}
+
+
+.navLink:active {
+  transform: scale(0.97);
 }
 
 .navLink.active {
@@ -165,7 +170,7 @@
   border-radius: 999px;
   padding: 7px 12px;
   background: rgba(233, 69, 96, 0.12);
-  transition: background 0.06s ease, color 0.06s ease, transform 0.06s ease;
+  transition: background 0.03s ease, color 0.03s ease, transform 0.03s ease;
 }
 
 .aboutButton::after {
@@ -221,7 +226,7 @@
   font-size: 14px;
   padding: 8px 10px;
   border-radius: 8px;
-  transition: background 0.08s ease, color 0.08s ease;
+  transition: background 0.04s ease, color 0.04s ease;
 }
 
 .submenuLink:hover {
@@ -237,7 +242,7 @@
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
-  transition: transform 0.06s ease, color 0.06s ease;
+  transition: transform 0.03s ease, color 0.03s ease;
 }
 
 .mobileToggle:active {
@@ -296,7 +301,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 30px;
-    transition: right 0.12s ease;
+    transition: right 0.07s ease;
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
   }
 
@@ -334,4 +339,5 @@
     display: none;
   }
 }
+
 

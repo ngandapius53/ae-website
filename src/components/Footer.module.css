@@ -69,12 +69,16 @@
   color: #ffffff;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
-  transition: all 0.08s ease;
+  transition: all 0.04s ease;
 }
 
 .socialLink:hover {
   background: #e94560;
   transform: translateY(-3px);
+}
+
+.socialLink:active {
+  transform: scale(0.96);
 }
 
 .columnTitle {
@@ -90,7 +94,7 @@
   margin-bottom: 15px;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
-  transition: all 0.08s ease;
+  transition: all 0.04s ease;
 }
 
 .link:hover {
