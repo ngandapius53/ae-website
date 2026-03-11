@@ -14,17 +14,11 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 const categories = [
   { title: 'Bedroom Furniture', count: 11, image: `${basePath}/furniture/work/bedframe-upholstered-gray.jpeg` },
   { title: 'Sofa Sets', count: 6, image: `${basePath}/furniture/work/sectional-sofa-teal.jpeg` },
-  { title: 'TV & Console Units', count: 6, image: `${basePath}/furniture/work/media-wall-unit-modern.jpeg` },
+  { title: 'TV & Console Units', count: 6, image: `${basePath}/furniture/work/tv-console-classic-white.jpeg` },
   { title: 'Kitchen & Storage', count: 5, image: `${basePath}/furniture/work/kitchen-hutch-gray-white.jpeg` },
 ]
 
 const featured = [
-  { name: 'Matte Black 3-Door Wardrobe', category: 'Bedroom', image: `${basePath}/furniture/work/wardrobe-matte-black.jpeg` },
-  { name: 'Walnut Classic Wardrobe', category: 'Bedroom', image: `${basePath}/furniture/work/wardrobe-walnut-classic.jpeg` },
-  { name: 'Espresso Dressing Table', category: 'Bedroom', image: `${basePath}/furniture/work/dressing-table-espresso.jpeg` },
-  { name: 'Black and White Bedroom Set', category: 'Bedroom', image: `${basePath}/furniture/work/bedroom-set-black-white.jpeg` },
-  { name: 'Midnight Mirror Dresser', category: 'Bedroom', image: `${basePath}/furniture/work/dresser-mirror-midnight.jpeg` },
-  { name: 'White Panel Bed Frame', category: 'Bedroom', image: `${basePath}/furniture/work/bedframe-white-panel.jpeg` },
   { name: 'Charcoal Display Cabinet', category: 'Storage', image: `${basePath}/furniture/work/display-cabinet-charcoal-oak.jpeg` },
   { name: 'White Orange Wardrobe Vanity', category: 'Storage', image: `${basePath}/furniture/work/wardrobe-vanity-white-orange.jpeg` },
   { name: 'Gray White Kitchen Hutch', category: 'Kitchen', image: `${basePath}/furniture/work/kitchen-hutch-gray-white.jpeg` },
@@ -42,9 +36,7 @@ const featured = [
   { name: 'Light Gray Sectional Sofa', category: 'Sofa', image: `${basePath}/furniture/work/sectional-sofa-light-gray.jpeg` },
   { name: 'Mid-Century Oak TV Stand', category: 'TV Unit', image: `${basePath}/furniture/work/tv-stand-midcentury-oak.jpeg` },
   { name: 'Black Fluted Coffee Table', category: 'Coffee Table', image: `${basePath}/furniture/work/coffee-table-fluted-black.jpeg` },
-  { name: 'Teal Chesterfield Sofa', category: 'Sofa', image: `${basePath}/furniture/work/chesterfield-sofa-teal.jpeg` },
   { name: 'Gray L-Shaped Sofa', category: 'Sofa', image: `${basePath}/furniture/work/l-shaped-sofa-gray.jpeg` },
-  { name: 'Modern Media Wall Unit', category: 'TV Unit', image: `${basePath}/furniture/work/media-wall-unit-modern.jpeg` },
   { name: 'Modern Bedroom Feature Wall', category: 'Interior', image: `${basePath}/furniture/work/bedroom-feature-wall-modern.jpeg` },
 ]
 
