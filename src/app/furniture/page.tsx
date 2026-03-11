@@ -18,7 +18,24 @@ const categories = [
   { title: 'Kitchen & Storage', count: 5, image: `${basePath}/furniture/work/kitchen-hutch-gray-white.jpeg` },
 ]
 
-const featured = [
+const quickFeatured = [
+  { name: 'Matte Black 3-Door Wardrobe', category: 'Bedroom', image: `${basePath}/furniture/quick/wardrobe-matte-black-clean.jpeg` },
+  { name: 'White Panel Bed Frame', category: 'Bedroom', image: `${basePath}/furniture/quick/bedframe-white-set.jpeg` },
+  { name: 'Modern Media Wall Unit', category: 'TV Unit', image: `${basePath}/furniture/quick/media-wall-unit-dark.jpeg` },
+  { name: 'TV Wall Console (Wood/White)', category: 'TV Unit', image: `${basePath}/furniture/quick/tv-wall-console-wood-white.jpeg` },
+  { name: 'Wall Display Shelves', category: 'Interior', image: `${basePath}/furniture/quick/wall-shelves-display-white.jpeg` },
+  { name: 'Shoe Rack Organizer', category: 'Storage', image: `${basePath}/furniture/quick/shoe-rack-white.jpeg` },
+  { name: 'Velvet Sofa (Gray + Gold)', category: 'Sofa', image: `${basePath}/furniture/quick/sofa-velvet-gray-gold.jpeg` },
+  { name: 'Sectional Sofa (Green)', category: 'Sofa', image: `${basePath}/furniture/quick/sectional-sofa-green.jpeg` },
+  { name: 'Sectional Sofa (Teal)', category: 'Sofa', image: `${basePath}/furniture/quick/sectional-sofa-teal-white.jpeg` },
+  { name: 'Sectional Sofa (Beige)', category: 'Sofa', image: `${basePath}/furniture/quick/sectional-sofa-beige.jpeg` },
+  { name: 'Leather Sectional (Built-in Table)', category: 'Sofa', image: `${basePath}/furniture/quick/sectional-leather-with-table.jpeg` },
+  { name: 'White Sofa Set', category: 'Sofa', image: `${basePath}/furniture/quick/sofa-set-white-leather.jpeg` },
+  { name: 'Tufted Loveseat (Gray)', category: 'Sofa', image: `${basePath}/furniture/quick/loveseat-tufted-gray-gold.jpeg` },
+  { name: 'Tufted Corner Sofa (Gray)', category: 'Sofa', image: `${basePath}/furniture/quick/sofa-corner-tufted-gray-outdoor.jpeg` },
+]
+
+const workshopFeatured = [
   { name: 'Charcoal Display Cabinet', category: 'Storage', image: `${basePath}/furniture/work/display-cabinet-charcoal-oak.jpeg` },
   { name: 'White Orange Wardrobe Vanity', category: 'Storage', image: `${basePath}/furniture/work/wardrobe-vanity-white-orange.jpeg` },
   { name: 'Gray White Kitchen Hutch', category: 'Kitchen', image: `${basePath}/furniture/work/kitchen-hutch-gray-white.jpeg` },
@@ -39,6 +56,8 @@ const featured = [
   { name: 'Gray L-Shaped Sofa', category: 'Sofa', image: `${basePath}/furniture/work/l-shaped-sofa-gray.jpeg` },
   { name: 'Modern Bedroom Feature Wall', category: 'Interior', image: `${basePath}/furniture/work/bedroom-feature-wall-modern.jpeg` },
 ]
+
+const featured = [...quickFeatured, ...workshopFeatured]
 
 export default function FurniturePage() {
   return (
