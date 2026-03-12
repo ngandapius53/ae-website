@@ -42,6 +42,9 @@ const projects = [
   { title: 'Circular TV Wall Concepts', category: 'Media Wall', image: `${basePath}/decoration/sarah-enterprise/tv-wall-circular-concepts-collage.jpeg` },
   { title: 'Illuminated TV Frame Wall', category: 'Media Wall', image: `${basePath}/decoration/sarah-enterprise/tv-wall-frame-illuminated.jpeg` },
   { title: 'Minimal Interior Finish', category: 'Final Finish', image: `${basePath}/decoration/sarah-enterprise/interior-room-finish-minimal.jpeg` },
+  { title: 'Kitchen Fit-Out (Island)', category: 'Kitchen Design', image: `${basePath}/decoration/interior-design/kitchen-fitout-led-ceiling-island.jpeg` },
+  { title: 'Kitchen Fit-Out (LED Ceiling)', category: 'Kitchen Design', image: `${basePath}/decoration/interior-design/kitchen-fitout-led-ceiling-angle.jpeg` },
+  { title: 'Modern Kitchen (Bar Stools)', category: 'Kitchen Design', image: `${basePath}/decoration/interior-design/kitchen-modern-island-bar-stools.jpeg` },
 ]
 
 export default function DecorationPage() {
@@ -50,8 +53,8 @@ export default function DecorationPage() {
       <section className={styles.hero}>
         <div className={styles.heroBg}>
           <Image
-            src={`${basePath}/decoration/sarah-enterprise/ceiling-led-hallway-linear.jpeg`}
-            alt="LED hallway ceiling decoration"
+            src={`${basePath}/decoration/interior-design/kitchen-modern-island-bar-stools.jpeg`}
+            alt="Modern kitchen interior design"
             fill
             priority
             sizes="100vw"
