@@ -23,7 +23,6 @@ const properties = [
   { title: 'Luxury Beachfront Villa', location: 'Miami, FL', price: '$2,500,000', beds: 5, baths: 4, image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=400&h=300&fit=crop' },
   { title: 'Cozy Family Home', location: 'Los Angeles, CA', price: '$1,200,000', beds: 4, baths: 3, image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=300&fit=crop' },
   { title: 'Penthouse Suite', location: 'Chicago, IL', price: '$1,800,000', beds: 3, baths: 3, image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400&h=300&fit=crop' },
-  { title: 'Mountain Retreat', location: 'Denver, CO', price: '$950,000', beds: 3, baths: 2, image: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=400&h=300&fit=crop' },
   { title: 'Suburban Estate', location: 'Austin, TX', price: '$1,450,000', beds: 5, baths: 4, image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&h=300&fit=crop' },
 ]
 
