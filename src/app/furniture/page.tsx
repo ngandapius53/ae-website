@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import fs from 'fs/promises'
+import path from 'path'
 import styles from '@/app/furniture/page.module.css'
 
 export const metadata: Metadata = {
@@ -59,7 +61,102 @@ const workshopFeatured = [
 
 const featured = [...quickFeatured, ...workshopFeatured]
 
-export default function FurniturePage() {
+type InspirationItem = {
+  src: string
+  title: string
+  category: string
+  href?: string
+}
+
+function cleanCaption(input: string) {
+  // Fix common mojibake sequences from some Instagram responses.
+  return input
+    .replaceAll('â€™', "'")
+    .replaceAll('â€œ', '"')
+    .replaceAll('â€', '"')
+    .replaceAll('â€“', '-')
+    .replaceAll('â€”', '-')
+    .replaceAll('ï¿½', '')
+    .replaceAll('\u0000', '')
+    .trim()
+}
+
+function categoryFromCaption(caption: string) {
+  const c = caption.toLowerCase()
+  if (c.includes('dining')) return 'Dining'
+  if (c.includes('dresser') || c.includes('bed') || c.includes('mattress') || c.includes('night before')) return 'Bedroom'
+  if (c.includes('living room') || c.includes('living space') || c.includes('center piece') || c.includes('cozy')) return 'Living Room'
+  if (c.includes('easter') || c.includes('palm sunday') || c.includes('eid mubarak')) return 'Seasonal'
+  if (c.includes('happy new month') || c.includes('stop by') || c.includes('when you can')) return 'Announcements'
+  return 'Furniture'
+}
+
+function titleFromCaption(caption: string) {
+  const c = caption.toLowerCase()
+  if (c.includes('easter')) return 'Easter Weekend Hours'
+  if (c.includes('happy new month')) return 'Happy New Month'
+  if (c.includes('palm sunday')) return 'Palm Sunday Blessings'
+  if (c.includes('eid mubarak')) return 'Eid Mubarak'
+  if (c.includes('dining') && c.includes('chair')) return 'Dining Chairs Upgrade'
+  if (c.includes('dresser')) return 'Perfect Dresser'
+  if (c.includes('center piece') || c.includes('centerpiece')) return 'Center Pieces'
+  if (c.includes('better mornings') || c.includes('night before')) return 'Better Mornings Start at Night'
+  if (c.includes('cozy') && c.includes('corner')) return 'Cozy Corner Comfort'
+  if (c.includes('classy')) return 'Classy Look'
+  if (c.includes('living room')) return 'Living Room Inspiration'
+
+  const firstLine = caption.split('\n').map((l) => l.trim()).find(Boolean) ?? 'Furniture Inspiration'
+  return firstLine.length > 56 ? `${firstLine.slice(0, 53)}...` : firstLine
+}
+
+async function getAshleyInspirationItems(basePathPrefix: string): Promise<InspirationItem[]> {
+  const manifestPath = path.join(
+    process.cwd(),
+    'public',
+    'instagram',
+    'ashley_homestoreuganda',
+    'manifest.json',
+  )
+
+  try {
+    const raw = await fs.readFile(manifestPath, 'utf8')
+    const manifest = JSON.parse(raw) as { items?: any[] }
+    const items = Array.isArray(manifest.items) ? manifest.items : []
+
+    const mapped = items.flatMap((item) => {
+      const file = item?.files?.[0]?.file as string | undefined
+      if (!file) return []
+
+      const caption = cleanCaption(String(item?.caption ?? ''))
+      const category = categoryFromCaption(caption)
+      const title = titleFromCaption(caption)
+      const src = `${basePathPrefix}/instagram/ashley_homestoreuganda/${file}`
+      const href = item?.postUrl ? String(item.postUrl) : undefined
+
+      return [{ src, title, category, href } satisfies InspirationItem]
+    })
+
+    return mapped
+  } catch {
+    return []
+  }
+}
+
+function groupByCategory(items: InspirationItem[]) {
+  const map = new Map<string, InspirationItem[]>()
+  for (const item of items) {
+    const list = map.get(item.category) ?? []
+    list.push(item)
+    map.set(item.category, list)
+  }
+  return map
+}
+
+export default async function FurniturePage() {
+  const inspirationItems = await getAshleyInspirationItems(basePath)
+  const inspirationByCategory = groupByCategory(inspirationItems)
+  const inspirationCategoryOrder = ['Living Room', 'Bedroom', 'Dining', 'Seasonal', 'Announcements', 'Furniture']
+
   return (
     <>
       <section className={styles.hero}>
@@ -135,6 +232,53 @@ export default function FurniturePage() {
           </div>
         </div>
       </section>
+
+      {inspirationItems.length > 0 && (
+        <section className={`section ${styles.inspiration}`}>
+          <div className="container">
+            <div className="text-center">
+              <h2 className="section-title">Furniture Inspiration</h2>
+              <p className="section-subtitle">Recent looks and ideas you can recreate at home</p>
+            </div>
+
+            {inspirationCategoryOrder.map((category) => {
+              const items = inspirationByCategory.get(category)
+              if (!items || items.length === 0) return null
+
+              return (
+                <div key={category} className={styles.inspirationGroup}>
+                  <h3 className={styles.inspirationGroupTitle}>{category}</h3>
+                  <div className={styles.inspirationGrid}>
+                    {items.map((item) => (
+                      <a
+                        key={item.src}
+                        href={item.href ?? item.src}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.inspirationCard}
+                        aria-label={`Open: ${item.title}`}
+                      >
+                        <div className={styles.inspirationImage}>
+                          <Image
+                            src={item.src}
+                            alt={item.title}
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          />
+                        </div>
+                        <div className={styles.inspirationOverlay}>
+                          <span className={styles.inspirationBadge}>{category}</span>
+                          <h4 className={styles.inspirationTitle}>{item.title}</h4>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </section>
+      )}
 
       <section className={`section ${styles.cta}`}>
         <div className="container">
