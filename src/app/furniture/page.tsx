@@ -68,11 +68,13 @@ type InspirationItem = {
   href?: string
 }
 
-const furnitureInspirationDirs = ['quick', 'work'] as const
+const furnitureInspirationDirs = ['quick', 'work', 'inspiration'] as const
 const furnitureImageExt = /\.(?:jpe?g|png|webp)$/i
 
 function titleFromFileName(fileName: string) {
   const base = fileName.replace(/\.[^/.]+$/, '')
+  const inspoMatch = /^inspo-(\d+)$/i.exec(base)
+  if (inspoMatch) return `Inspiration #${inspoMatch[1]}`
   const words = base.split(/[-_]+/).filter(Boolean)
   const titled = words.map((word) => {
     const lower = word.toLowerCase()
@@ -86,6 +88,7 @@ function titleFromFileName(fileName: string) {
 
 function categoryFromFileName(fileName: string) {
   const n = fileName.toLowerCase()
+  if (n.startsWith('inspo-')) return 'Inspiration'
   if (
     n.includes('bed') ||
     n.includes('wardrobe') ||
@@ -156,7 +159,7 @@ function groupByCategory(items: InspirationItem[]) {
 export default async function FurniturePage() {
   const inspirationItems = await getFurnitureInspirationItems(basePath)
   const inspirationByCategory = groupByCategory(inspirationItems)
-  const inspirationCategoryOrder = ['Living Room', 'Bedroom', 'TV Unit', 'Kitchen', 'Storage', 'Furniture']
+  const inspirationCategoryOrder = ['Living Room', 'Bedroom', 'TV Unit', 'Kitchen', 'Storage', 'Furniture', 'Inspiration']
 
   return (
     <>

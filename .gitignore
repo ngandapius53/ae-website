@@ -12,6 +12,9 @@ yarn-error.log*
 dev-server.out.log
 dev-server.err.log
 
+# local scratch / downloads
+tmp/
+
 # misc
 .DS_Store
 *.local
