@@ -68,78 +68,79 @@ type InspirationItem = {
   href?: string
 }
 
-function cleanCaption(input: string) {
-  // Fix common mojibake sequences from some Instagram responses.
-  return input
-    .replaceAll('â€™', "'")
-    .replaceAll('â€œ', '"')
-    .replaceAll('â€', '"')
-    .replaceAll('â€“', '-')
-    .replaceAll('â€”', '-')
-    .replaceAll('ï¿½', '')
-    .replaceAll('\u0000', '')
-    .trim()
+const furnitureInspirationDirs = ['quick', 'work'] as const
+const furnitureImageExt = /\.(?:jpe?g|png|webp)$/i
+
+function titleFromFileName(fileName: string) {
+  const base = fileName.replace(/\.[^/.]+$/, '')
+  const words = base.split(/[-_]+/).filter(Boolean)
+  const titled = words.map((word) => {
+    const lower = word.toLowerCase()
+    if (lower === 'tv') return 'TV'
+    if (lower === '3d' || lower === '3-d') return '3-D'
+    return lower.length === 0 ? '' : lower[0].toUpperCase() + lower.slice(1)
+  })
+  const title = titled.filter(Boolean).join(' ').trim()
+  return title.length > 56 ? `${title.slice(0, 53)}...` : title
 }
 
-function categoryFromCaption(caption: string) {
-  const c = caption.toLowerCase()
-  if (c.includes('dining')) return 'Dining'
-  if (c.includes('dresser') || c.includes('bed') || c.includes('mattress') || c.includes('night before')) return 'Bedroom'
-  if (c.includes('living room') || c.includes('living space') || c.includes('center piece') || c.includes('cozy')) return 'Living Room'
-  if (c.includes('easter') || c.includes('palm sunday') || c.includes('eid mubarak')) return 'Seasonal'
-  if (c.includes('happy new month') || c.includes('stop by') || c.includes('when you can')) return 'Announcements'
+function categoryFromFileName(fileName: string) {
+  const n = fileName.toLowerCase()
+  if (
+    n.includes('bed') ||
+    n.includes('wardrobe') ||
+    n.includes('dresser') ||
+    n.includes('vanity') ||
+    n.includes('night')
+  )
+    return 'Bedroom'
+  if (
+    n.includes('sofa') ||
+    n.includes('sectional') ||
+    n.includes('loveseat') ||
+    n.includes('l-shaped') ||
+    n.includes('lshaped') ||
+    n.includes('lounge') ||
+    n.includes('coffee') ||
+    n.includes('corner')
+  )
+    return 'Living Room'
+  if (n.includes('tv') || n.includes('console') || n.includes('media') || n.includes('wall-unit') || n.includes('wall'))
+    return 'TV Unit'
+  if (n.includes('kitchen') || n.includes('hutch') || n.includes('sideboard') || n.includes('cart') || n.includes('gas'))
+    return 'Kitchen'
+  if (n.includes('shelf') || n.includes('shelves') || n.includes('rack') || n.includes('cabinet') || n.includes('storage'))
+    return 'Storage'
   return 'Furniture'
 }
 
-function titleFromCaption(caption: string) {
-  const c = caption.toLowerCase()
-  if (c.includes('easter')) return 'Easter Weekend Hours'
-  if (c.includes('happy new month')) return 'Happy New Month'
-  if (c.includes('palm sunday')) return 'Palm Sunday Blessings'
-  if (c.includes('eid mubarak')) return 'Eid Mubarak'
-  if (c.includes('dining') && c.includes('chair')) return 'Dining Chairs Upgrade'
-  if (c.includes('dresser')) return 'Perfect Dresser'
-  if (c.includes('center piece') || c.includes('centerpiece')) return 'Center Pieces'
-  if (c.includes('better mornings') || c.includes('night before')) return 'Better Mornings Start at Night'
-  if (c.includes('cozy') && c.includes('corner')) return 'Cozy Corner Comfort'
-  if (c.includes('classy')) return 'Classy Look'
-  if (c.includes('living room')) return 'Living Room Inspiration'
+async function getFurnitureInspirationItems(basePathPrefix: string): Promise<InspirationItem[]> {
+  const baseDir = path.join(process.cwd(), 'public', 'furniture')
+  const items: InspirationItem[] = []
 
-  const firstLine = caption.split('\n').map((l) => l.trim()).find(Boolean) ?? 'Furniture Inspiration'
-  return firstLine.length > 56 ? `${firstLine.slice(0, 53)}...` : firstLine
-}
+  for (const dir of furnitureInspirationDirs) {
+    const fullDir = path.join(baseDir, dir)
+    let files: string[] = []
 
-async function getAshleyInspirationItems(basePathPrefix: string): Promise<InspirationItem[]> {
-  const manifestPath = path.join(
-    process.cwd(),
-    'public',
-    'instagram',
-    'ashley_homestoreuganda',
-    'manifest.json',
-  )
+    try {
+      files = await fs.readdir(fullDir)
+    } catch {
+      continue
+    }
 
-  try {
-    const raw = await fs.readFile(manifestPath, 'utf8')
-    const manifest = JSON.parse(raw) as { items?: any[] }
-    const items = Array.isArray(manifest.items) ? manifest.items : []
-
-    const mapped = items.flatMap((item) => {
-      const file = item?.files?.[0]?.file as string | undefined
-      if (!file) return []
-
-      const caption = cleanCaption(String(item?.caption ?? ''))
-      const category = categoryFromCaption(caption)
-      const title = titleFromCaption(caption)
-      const src = `${basePathPrefix}/instagram/ashley_homestoreuganda/${file}`
-      const href = item?.postUrl ? String(item.postUrl) : undefined
-
-      return [{ src, title, category, href } satisfies InspirationItem]
-    })
-
-    return mapped
-  } catch {
-    return []
+    files
+      .filter((file) => furnitureImageExt.test(file))
+      .sort((a, b) => a.localeCompare(b))
+      .forEach((file) => {
+        items.push({
+          src: `${basePathPrefix}/furniture/${dir}/${file}`,
+          title: titleFromFileName(file),
+          category: categoryFromFileName(file),
+        })
+      })
   }
+
+  return items
 }
 
 function groupByCategory(items: InspirationItem[]) {
@@ -153,9 +154,9 @@ function groupByCategory(items: InspirationItem[]) {
 }
 
 export default async function FurniturePage() {
-  const inspirationItems = await getAshleyInspirationItems(basePath)
+  const inspirationItems = await getFurnitureInspirationItems(basePath)
   const inspirationByCategory = groupByCategory(inspirationItems)
-  const inspirationCategoryOrder = ['Living Room', 'Bedroom', 'Dining', 'Seasonal', 'Announcements', 'Furniture']
+  const inspirationCategoryOrder = ['Living Room', 'Bedroom', 'TV Unit', 'Kitchen', 'Storage', 'Furniture']
 
   return (
     <>
@@ -267,6 +268,7 @@ export default async function FurniturePage() {
                           />
                         </div>
                         <div className={styles.inspirationOverlay}>
+                          <span className={styles.inspirationWatermark}>ARAH ENTERPRISES</span>
                           <span className={styles.inspirationBadge}>{category}</span>
                           <h4 className={styles.inspirationTitle}>{item.title}</h4>
                         </div>
