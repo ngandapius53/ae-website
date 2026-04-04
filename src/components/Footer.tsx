@@ -98,7 +98,11 @@ export default function Footer() {
             <div className={styles.contactItem}>
               <Phone size={18} />
               <span>
-                Available on request
+                +256708924166
+                <br />
+                +256702027566
+                <br />
+                +256709928840
               </span>
             </div>
             <div className={styles.contactItem}>
