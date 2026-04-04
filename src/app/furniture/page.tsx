@@ -5,6 +5,7 @@ import { ArrowRight } from 'lucide-react'
 import fs from 'fs/promises'
 import path from 'path'
 import styles from '@/app/furniture/page.module.css'
+import InspirationGallery from '@/app/furniture/InspirationGallery'
 
 export const metadata: Metadata = {
   title: 'Premium Furniture - AE',
@@ -161,6 +162,14 @@ export default async function FurniturePage() {
   const inspirationByCategory = groupByCategory(inspirationItems)
   const inspirationCategoryOrder = ['Living Room', 'Bedroom', 'TV Unit', 'Kitchen', 'Storage', 'Furniture', 'Inspiration']
 
+  const inspirationGroups = inspirationCategoryOrder
+    .map((category) => {
+      const items = inspirationByCategory.get(category)
+      if (!items || items.length === 0) return null
+      return { category, items }
+    })
+    .filter(Boolean) as { category: string; items: InspirationItem[] }[]
+
   return (
     <>
       <section className={styles.hero}>
@@ -245,42 +254,7 @@ export default async function FurniturePage() {
               <p className="section-subtitle">Recent looks and ideas you can recreate at home</p>
             </div>
 
-            {inspirationCategoryOrder.map((category) => {
-              const items = inspirationByCategory.get(category)
-              if (!items || items.length === 0) return null
-
-              return (
-                <div key={category} className={styles.inspirationGroup}>
-                  <h3 className={styles.inspirationGroupTitle}>{category}</h3>
-                  <div className={styles.inspirationGrid}>
-                    {items.map((item) => (
-                      <a
-                        key={item.src}
-                        href={item.href ?? item.src}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={styles.inspirationCard}
-                        aria-label={`Open: ${item.title}`}
-                      >
-                        <div className={styles.inspirationImage}>
-                          <Image
-                            src={item.src}
-                            alt={item.title}
-                            fill
-                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                          />
-                        </div>
-                        <div className={styles.inspirationOverlay}>
-                          <span className={styles.inspirationWatermark}>ARAH ENTERPRISES</span>
-                          <span className={styles.inspirationBadge}>{category}</span>
-                          <h4 className={styles.inspirationTitle}>{item.title}</h4>
-                        </div>
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              )
-            })}
+            <InspirationGallery groups={inspirationGroups} initialCount={6} step={6} />
           </div>
         </section>
       )}

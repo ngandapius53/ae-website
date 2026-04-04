@@ -111,11 +111,33 @@
   overflow: hidden;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
+  content-visibility: auto;
+  contain-intrinsic-size: 340px 320px;
 }
 
 .propertyCard:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+.propertyCardLink {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.galleryMore {
+  margin-top: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.galleryMoreMeta {
+  color: #6c757d;
+  font-size: 14px;
 }
 
 .propertyImage {

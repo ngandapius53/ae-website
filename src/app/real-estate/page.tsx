@@ -2,7 +2,10 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Building2, Home, Key, Search } from 'lucide-react'
+import fs from 'fs/promises'
+import path from 'path'
 import styles from '@/app/real-estate/page.module.css'
+import PropertyGallery from '@/app/real-estate/PropertyGallery'
 
 export const metadata: Metadata = {
   title: 'Real Estate - AE',
@@ -18,13 +21,50 @@ const services = [
   { icon: Key, title: 'Property Management', description: 'Comprehensive management services for landlords and investors.', href: '/contact?service=real-estate&topic=property-management' },
 ]
 
-const properties = [
-  { title: 'Modern Downtown Apartment', location: 'New York, NY', price: '$850,000', beds: 2, baths: 2, image: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&h=300&fit=crop' },
-  { title: 'Luxury Beachfront Villa', location: 'Miami, FL', price: '$2,500,000', beds: 5, baths: 4, image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=400&h=300&fit=crop' },
-  { title: 'Cozy Family Home', location: 'Los Angeles, CA', price: '$1,200,000', beds: 4, baths: 3, image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=300&fit=crop' },
-  { title: 'Penthouse Suite', location: 'Chicago, IL', price: '$1,800,000', beds: 3, baths: 3, image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400&h=300&fit=crop' },
-  { title: 'Suburban Estate', location: 'Austin, TX', price: '$1,450,000', beds: 5, baths: 4, image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&h=300&fit=crop' },
-]
+type GalleryItem = {
+  src: string
+  title: string
+}
+
+const realEstateImageExt = /\.(?:jpe?g|png|webp)$/i
+
+function titleFromRealEstateFile(fileName: string) {
+  const base = fileName.replace(/\.[^/.]+$/, '')
+  const houseMatch = /^house-(\d+)$/i.exec(base)
+  if (houseMatch) return `House Photo #${houseMatch[1]}`
+  const reMatch = /^re-(\d+)$/i.exec(base)
+  if (reMatch) return `Property Photo #${reMatch[1]}`
+  return base.replace(/[-_]+/g, ' ').trim() || 'Property Photo'
+}
+
+async function getRealEstateGalleryItems(basePathPrefix: string): Promise<GalleryItem[]> {
+  const baseDir = path.join(process.cwd(), 'public', 'real-estate')
+  const dirs = ['houses'] as const
+  const items: GalleryItem[] = []
+
+  for (const dir of dirs) {
+    const fullDir = path.join(baseDir, dir)
+    let files: string[] = []
+
+    try {
+      files = await fs.readdir(fullDir)
+    } catch {
+      continue
+    }
+
+    files
+      .filter((file) => realEstateImageExt.test(file))
+      .sort((a, b) => a.localeCompare(b))
+      .forEach((file) => {
+        items.push({
+          src: `${basePathPrefix}/real-estate/${dir}/${file}`,
+          title: titleFromRealEstateFile(file),
+        })
+      })
+  }
+
+  return items
+}
 
 const interiors = [
   { title: 'Minimal Room Finish', image: `${basePath}/decoration/sarah-enterprise/interior-room-finish-minimal.jpeg` },
@@ -35,14 +75,17 @@ const interiors = [
   { title: 'Illuminated TV Frame Wall', image: `${basePath}/decoration/sarah-enterprise/tv-wall-frame-illuminated.jpeg` },
 ]
 
-export default function RealEstatePage() {
+export default async function RealEstatePage() {
+  const galleryItems = await getRealEstateGalleryItems(basePath)
+  const heroImage = galleryItems[1]?.src ?? galleryItems[0]?.src
+
   return (
     <>
       <section className={styles.hero}>
         <div className={styles.heroBg}>
           <Image
-            src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=2400&auto=format&fit=crop"
-            alt="City skyline with modern apartments"
+            src={heroImage ?? `${basePath}/real-estate/properties/re-01.jpeg`}
+            alt="Real estate property showcase"
             fill
             priority
             sizes="100vw"
@@ -82,30 +125,15 @@ export default function RealEstatePage() {
         <div className="container">
           <div className="text-center">
             <h2 className="section-title">Featured Properties</h2>
-            <p className="section-subtitle">Handpicked properties for you</p>
+            <p className="section-subtitle">Recent property photos and inspiration</p>
           </div>
-          <div className={styles.listingsGrid}>
-            {properties.map((property, index) => (
-              <div key={index} className={styles.propertyCard}>
-                <div className={styles.propertyImage}>
-                  <Image
-                    src={property.image}
-                    alt={property.title}
-                    fill
-                    sizes="(max-width: 1024px) 50vw, 33vw"
-                  />
-                </div>
-                <div className={styles.propertyInfo}>
-                  <span className={styles.propertyLocation}>{property.location}</span>
-                  <h4 className={styles.propertyTitle}>{property.title}</h4>
-                  <div className={styles.propertyDetails}>
-                    <span>{property.beds} Beds</span>
-                    <span>{property.baths} Baths</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          {galleryItems.length > 0 ? (
+            <PropertyGallery items={galleryItems} />
+          ) : (
+            <div className="text-center" style={{ marginTop: '30px' }}>
+              <p className="section-subtitle">No property photos available yet.</p>
+            </div>
+          )}
           <div className="text-center" style={{ marginTop: '50px' }}>
             <Link href="/contact" className="btn btn-primary">
               View All Properties <ArrowRight size={20} />
