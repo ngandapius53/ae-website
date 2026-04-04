@@ -137,12 +137,14 @@ export default function CheckoutPage() {
               </div>
 
               <div className={styles.field}>
-                <label htmlFor="location" className={styles.label}>Location (optional)</label>
+                <label htmlFor="location" className={styles.label}>Address (optional)</label>
                 <input
                   id="location"
                   className={styles.input}
                   value={form.location}
                   onChange={(event) => setForm({ ...form, location: event.target.value })}
+                  placeholder="KAMPALA NTINDA"
+                  autoComplete="street-address"
                 />
               </div>
 

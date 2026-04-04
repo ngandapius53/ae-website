@@ -90,7 +90,10 @@ export default function Footer() {
             <h4 className={styles.columnTitle}>Contact</h4>
             <div className={styles.contactItem}>
               <MapPin size={18} />
-              <span>KAMPALA NTINDA</span>
+              <div>
+                <div className={styles.contactLineLabel}>Address</div>
+                <span>KAMPALA NTINDA</span>
+              </div>
             </div>
             <div className={styles.contactItem}>
               <Phone size={18} />

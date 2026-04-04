@@ -116,6 +116,15 @@
   margin-top: 3px;
 }
 
+.contactLineLabel {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 4px;
+}
+
 .bottom {
   margin-top: 60px;
   padding: 25px 0;
