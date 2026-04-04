@@ -189,7 +189,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4>Address</h4>
-                    <p>NTINDA</p>
+                    <p>KAMPALA NTINDA</p>
                   </div>
                 </div>
                 <div className={styles.contactItem}>
@@ -198,9 +198,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4>Phone</h4>
-                    <p>+256708924166</p>
-                    <p>+256702027566</p>
-                    <p>+256709928840</p>
+                    <p>Available on request</p>
                   </div>
                 </div>
                 <div className={styles.contactItem}>
@@ -283,7 +281,7 @@ export default function ContactPage() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        placeholder="+256708924166"
+                        placeholder="Your phone number"
                         className={errors.phone ? styles.fieldError : ''}
                         aria-invalid={Boolean(errors.phone)}
                         aria-describedby={errors.phone ? 'phone-error' : undefined}

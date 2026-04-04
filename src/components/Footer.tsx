@@ -90,16 +90,12 @@ export default function Footer() {
             <h4 className={styles.columnTitle}>Contact</h4>
             <div className={styles.contactItem}>
               <MapPin size={18} />
-              <span>NTINDA</span>
+              <span>KAMPALA NTINDA</span>
             </div>
             <div className={styles.contactItem}>
               <Phone size={18} />
               <span>
-                +256708924166
-                <br />
-                +256702027566
-                <br />
-                +256709928840
+                Available on request
               </span>
             </div>
             <div className={styles.contactItem}>
