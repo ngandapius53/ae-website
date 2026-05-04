@@ -1,4 +1,4 @@
-﻿.footer {
+.footer {
   background: #1a1a2e;
   color: #ffffff;
   padding: 80px 0 0;
@@ -55,7 +55,9 @@
 
 .social {
   display: flex;
+  justify-content: center;
   gap: 15px;
+  margin-top: 48px;
 }
 
 .socialLink {
@@ -126,10 +128,9 @@
 }
 
 .bottom {
-  margin-top: 60px;
+  margin-top: 30px;
   padding: 25px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
   color: rgba(255, 255, 255, 0.5);
 }
-
