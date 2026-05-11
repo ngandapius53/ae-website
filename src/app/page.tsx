@@ -61,6 +61,37 @@ const features = [
   { number: '50+', label: 'Awards Won' }
 ]
 
+const featuredOffers = [
+  {
+    title: 'Interior Consultation',
+    category: 'Decoration',
+    price: 'From UGX 150,000',
+    image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&h=600&fit=crop',
+    link: '/decoration'
+  },
+  {
+    title: 'Custom Sofa Planning',
+    category: 'Furniture',
+    price: 'Quote on request',
+    image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=600&fit=crop',
+    link: '/furniture'
+  },
+  {
+    title: 'Premium Fragrance Set',
+    category: 'Luxury Fragrance',
+    price: 'Contact for price',
+    image: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=600&h=600&fit=crop',
+    link: '/luxury-fragrance'
+  },
+  {
+    title: 'Brand Starter Package',
+    category: 'Graphic Design',
+    price: 'From UGX 250,000',
+    image: 'https://images.unsplash.com/photo-1635405074683-96d6921a2a68?w=600&h=600&fit=crop',
+    link: '/graphic-design'
+  }
+]
+
 export default function Home() {
   return (
     <>
@@ -179,6 +210,52 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className={`section ${styles.featured}`}>
+        <div className="container">
+          <div className={styles.sectionHeaderRow}>
+            <div>
+              <span>Featured Services</span>
+              <h2>Popular requests, picked for you.</h2>
+            </div>
+            <Link href="/contact">View all services <ArrowRight size={16} /></Link>
+          </div>
+          <div className={styles.productGrid}>
+            {featuredOffers.map((offer) => (
+              <Link href={offer.link} className={styles.productCard} key={offer.title}>
+                <div className={styles.productImage}>
+                  <Image src={offer.image} alt={offer.title} fill sizes="(max-width: 768px) 50vw, 25vw" />
+                </div>
+                <span>{offer.category}</span>
+                <h3>{offer.title}</h3>
+                <p>{offer.price}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.roots}>
+        <div className={styles.rootsText}>
+          <span>Our Roots</span>
+          <h2>Built in Kampala. Made for everyday beauty.</h2>
+          <p>
+            ARAH Enterprises connects practical craft with modern presentation. From interior finishing and furniture selection to fragrance, branding, and property support, every service is shaped around real homes, real businesses, and real client needs.
+          </p>
+          <p>
+            We work from Kampala Ntinda with a focus on clear communication, dependable execution, and polished results that help your space or brand feel complete.
+          </p>
+          <Link href="/about">Learn About ARAH <ArrowRight size={17} /></Link>
+        </div>
+        <div className={styles.rootsImage}>
+          <Image
+            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=900&h=1100&fit=crop"
+            alt="Modern furnished interior"
+            fill
+            sizes="(max-width: 900px) 100vw, 45vw"
+          />
         </div>
       </section>
 
