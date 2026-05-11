@@ -75,6 +75,12 @@ const interiors = [
   { title: 'Illuminated TV Frame Wall', image: `${basePath}/decoration/sarah-enterprise/tv-wall-frame-illuminated.jpeg` },
 ]
 
+const propertyPackages = [
+  { title: 'House Search Support', location: 'Kampala & nearby', price: 'Quote on request', image: `${basePath}/real-estate/houses/house-001.webp` },
+  { title: 'Rental Property Viewing', location: 'Residential', price: 'Contact for details', image: `${basePath}/real-estate/houses/house-002.webp` },
+  { title: 'Property Listing Support', location: 'For sellers', price: 'Commission based', image: `${basePath}/real-estate/houses/house-003.webp` },
+]
+
 export default async function RealEstatePage() {
   const galleryItems = await getRealEstateGalleryItems(basePath)
   const heroImage = galleryItems[1]?.src ?? galleryItems[0]?.src
@@ -126,6 +132,20 @@ export default async function RealEstatePage() {
           <div className="text-center">
             <h2 className="section-title">Featured Properties</h2>
             <p className="section-subtitle">Recent property photos and inspiration</p>
+          </div>
+          <div className={styles.packageGrid}>
+            {propertyPackages.map((item) => (
+              <Link href="/contact" key={item.title} className={styles.packageCard}>
+                <div className={styles.packageImage}>
+                  <Image src={item.image} alt={item.title} fill sizes="(max-width: 768px) 50vw, 33vw" />
+                </div>
+                <div className={styles.packageInfo}>
+                  <span>{item.location}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.price}</p>
+                </div>
+              </Link>
+            ))}
           </div>
           {galleryItems.length > 0 ? (
             <PropertyGallery items={galleryItems} />

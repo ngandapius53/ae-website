@@ -233,6 +233,8 @@ export default async function FurniturePage() {
                 <div className={styles.productInfo}>
                   <span className={styles.productCategory}>{item.category}</span>
                   <h4 className={styles.productName}>{item.name}</h4>
+                  <p className={styles.productPrice}>Contact for price</p>
+                  <span className={styles.productAction}>Inquire now</span>
                 </div>
               </div>
             ))}

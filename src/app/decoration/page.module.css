@@ -65,10 +65,11 @@
 
 .featureCard {
   background: white;
-  border-radius: 20px;
+  border-radius: 0;
   padding: 40px;
   text-align: center;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9e3da;
+  box-shadow: none;
   transition: all 0.3s ease;
 }
 
@@ -101,7 +102,7 @@
 }
 
 .gallery {
-  background: #f8f9fa;
+  background: #f6f1e9;
 }
 
 .galleryGrid {
@@ -112,7 +113,7 @@
 
 .galleryItem {
   position: relative;
-  border-radius: 20px;
+  border-radius: 0;
   overflow: hidden;
   aspect-ratio: 1;
   cursor: pointer;
@@ -165,6 +166,15 @@
   margin-top: 5px;
 }
 
+.galleryPrice {
+  margin-top: 8px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
 @media (max-width: 1024px) {
   .galleryGrid {
     grid-template-columns: repeat(2, 1fr);
@@ -176,7 +186,21 @@
     font-size: 36px;
   }
   .galleryGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .galleryOverlay {
+    padding: 14px;
+  }
+
+  .galleryTitle {
+    font-size: 14px;
+  }
+
+  .galleryCategory,
+  .galleryPrice {
+    font-size: 10px;
   }
 }
 

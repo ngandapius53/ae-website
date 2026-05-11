@@ -117,6 +117,7 @@ export default function DecorationPage() {
                 <div className={styles.galleryOverlay}>
                   <span className={styles.galleryCategory}>{project.category}</span>
                   <h4 className={styles.galleryTitle}>{project.title}</h4>
+                  <p className={styles.galleryPrice}>Quote on request</p>
                 </div>
               </div>
             ))}

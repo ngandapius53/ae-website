@@ -53,10 +53,11 @@
 
 .serviceCard {
   background: white;
-  border-radius: 20px;
+  border-radius: 0;
   padding: 35px 25px;
   text-align: center;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9e3da;
+  box-shadow: none;
   transition: all 0.3s ease;
 }
 
@@ -96,7 +97,52 @@
 }
 
 .listings {
-  background: #f8f9fa;
+  background: #f6f1e9;
+}
+
+.packageGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 42px;
+}
+
+.packageCard {
+  display: block;
+  background: #ffffff;
+  border: 1px solid #e9e3da;
+  color: #1a1a2e;
+}
+
+.packageImage {
+  position: relative;
+  aspect-ratio: 1.2;
+  overflow: hidden;
+}
+
+.packageImage :global(img) {
+  object-fit: cover;
+}
+
+.packageInfo {
+  padding: 18px;
+}
+
+.packageInfo span {
+  color: #6c757d;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.packageInfo h3 {
+  margin: 8px 0;
+  font-size: 18px;
+}
+
+.packageInfo p {
+  color: #e94560;
+  font-weight: 800;
 }
 
 .listingsGrid {
@@ -200,9 +246,10 @@
 
 .interiorCard {
   background: white;
-  border-radius: 20px;
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9e3da;
+  box-shadow: none;
   transition: all 0.3s ease;
 }
 
@@ -258,6 +305,24 @@
 @media (max-width: 768px) {
   .listingsGrid {
     grid-template-columns: 1fr;
+  }
+
+  .packageGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .packageInfo {
+    padding: 12px;
+  }
+
+  .packageInfo h3 {
+    font-size: 14px;
+  }
+
+  .packageInfo span,
+  .packageInfo p {
+    font-size: 11px;
   }
 }
 

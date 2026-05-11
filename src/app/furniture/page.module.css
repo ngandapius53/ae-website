@@ -58,10 +58,11 @@
 
 .categoryCard {
   background: white;
-  border-radius: 20px;
+  border-radius: 0;
   overflow: hidden;
   text-align: center;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9e3da;
+  box-shadow: none;
   transition: all 0.3s ease;
   cursor: pointer;
 }
@@ -130,7 +131,7 @@
 }
 
 .featured {
-  background: #f8f9fa;
+  background: #f6f1e9;
 }
 
 .featuredGrid {
@@ -140,10 +141,12 @@
 }
 
 .productCard {
+  position: relative;
   background: white;
-  border-radius: 20px;
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9e3da;
+  box-shadow: none;
   transition: all 0.3s ease;
 }
 
@@ -172,7 +175,7 @@
 }
 
 .productInfo {
-  padding: 25px;
+  padding: 18px;
 }
 
 .productCategory {
@@ -189,9 +192,20 @@
 }
 
 .productPrice {
-  font-size: 20px;
+  margin-top: 8px;
+  font-size: 18px;
   font-weight: 600;
   color: #e94560;
+}
+
+.productAction {
+  display: inline-block;
+  margin-top: 12px;
+  color: #1a1a2e;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 @media (max-width: 1024px) {
@@ -202,7 +216,27 @@
 
 @media (max-width: 768px) {
   .featuredGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .productImage {
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .productInfo {
+    padding: 12px;
+  }
+
+  .productName {
+    font-size: 14px;
+  }
+
+  .productPrice,
+  .productAction,
+  .productCategory {
+    font-size: 11px;
   }
 }
 

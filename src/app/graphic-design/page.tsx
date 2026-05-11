@@ -19,16 +19,16 @@ const services = [
 ]
 
 const portfolio = [
-  { title: 'Client Work 01', category: 'Branding', image: `${basePath}/graphic-design/gd-01.jpeg` },
-  { title: 'Client Work 02', category: 'Branding', image: `${basePath}/graphic-design/gd-02.jpeg` },
-  { title: 'Client Work 03', category: 'Branding', image: `${basePath}/graphic-design/gd-03.jpeg` },
-  { title: 'Client Work 04', category: 'Branding', image: `${basePath}/graphic-design/gd-04.jpeg` },
-  { title: 'Client Work 05', category: 'Branding', image: `${basePath}/graphic-design/gd-05.jpeg` },
-  { title: 'Client Work 06', category: 'Branding', image: `${basePath}/graphic-design/gd-06.jpeg` },
-  { title: 'Client Work 07', category: 'Branding', image: `${basePath}/graphic-design/gd-07.jpeg` },
-  { title: 'Client Work 08', category: 'Branding', image: `${basePath}/graphic-design/gd-08.jpeg` },
-  { title: 'Client Work 09', category: 'Branding', image: `${basePath}/graphic-design/gd-09.jpeg` },
-  { title: 'Client Work 10', category: 'Branding', image: `${basePath}/graphic-design/gd-10.jpeg` },
+  { title: 'Logo Design Package', category: 'Branding', price: 'From UGX 150,000', image: `${basePath}/graphic-design/gd-01.jpeg` },
+  { title: 'Business Flyer Design', category: 'Print Design', price: 'From UGX 50,000', image: `${basePath}/graphic-design/gd-02.jpeg` },
+  { title: 'Poster Design', category: 'Marketing', price: 'From UGX 70,000', image: `${basePath}/graphic-design/gd-03.jpeg` },
+  { title: 'Social Media Artwork', category: 'Digital Design', price: 'From UGX 40,000', image: `${basePath}/graphic-design/gd-04.jpeg` },
+  { title: 'Brand Identity Kit', category: 'Branding', price: 'From UGX 300,000', image: `${basePath}/graphic-design/gd-05.jpeg` },
+  { title: 'Banner Design', category: 'Marketing', price: 'Quote on request', image: `${basePath}/graphic-design/gd-06.jpeg` },
+  { title: 'Product Label Design', category: 'Packaging', price: 'Quote on request', image: `${basePath}/graphic-design/gd-07.jpeg` },
+  { title: 'Event Artwork', category: 'Print Design', price: 'From UGX 80,000', image: `${basePath}/graphic-design/gd-08.jpeg` },
+  { title: 'Menu / Catalog Design', category: 'Business', price: 'Quote on request', image: `${basePath}/graphic-design/gd-09.jpeg` },
+  { title: 'Full Campaign Artwork', category: 'Marketing', price: 'Quote on request', image: `${basePath}/graphic-design/gd-10.jpeg` },
 ]
 
 export default function GraphicDesignPage() {
@@ -94,6 +94,7 @@ export default function GraphicDesignPage() {
                 <div className={styles.portfolioOverlay}>
                   <span className={styles.portfolioCategory}>{item.category}</span>
                   <h4 className={styles.portfolioTitle}>{item.title}</h4>
+                  <p className={styles.portfolioPrice}>{item.price}</p>
                 </div>
               </div>
             ))}

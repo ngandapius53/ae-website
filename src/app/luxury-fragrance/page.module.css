@@ -45,7 +45,7 @@
 .intro {
   padding: 4rem 2rem;
   text-align: center;
-  background: #fafafa;
+  background: #f6f1e9;
 }
 
 .sectionTitle {
@@ -77,9 +77,10 @@
 
 .card {
   background: white;
-  border-radius: 12px;
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border: 1px solid #e9e3da;
+  box-shadow: none;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
@@ -208,6 +209,30 @@
   }
   
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .imageContainer {
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .cardContent {
+    padding: 0.9rem;
+  }
+
+  .cardTitle {
+    font-size: 1rem;
+  }
+
+  .cardPrice,
+  .cardBrand {
+    font-size: 0.8rem;
+  }
+
+  .inquireBtn {
+    padding: 0.65rem;
+    font-size: 0.85rem;
   }
 }

@@ -11,6 +11,8 @@ const fragrances = Array.from({ length: 23 }, (_, index) => {
   const imageNumber = String(index + 1).padStart(2, '0')
   return {
     id: index + 1,
+    name: `Luxury Fragrance ${imageNumber}`,
+    price: 'Contact for price',
     image: `${basePath}/luxury-fragrance/lf-${imageNumber}.jpeg`,
   }
 })
@@ -60,6 +62,12 @@ export default function LuxuryFragrance() {
                   fill
                   className={styles.cardImage}
                 />
+              </div>
+              <div className={styles.cardContent}>
+                <span className={styles.cardBrand}>ARAH Fragrance</span>
+                <h3 className={styles.cardTitle}>{perfume.name}</h3>
+                <p className={styles.cardPrice}>{perfume.price}</p>
+                <button className={styles.inquireBtn} type="button">Inquire</button>
               </div>
             </div>
           ))}
