@@ -1,8 +1,9 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Building2, CreditCard, Heart, Paintbrush, PenTool, Search, ShieldCheck, ShoppingBag, Sofa, Sparkles, Truck } from 'lucide-react'
+import { ArrowRight, Building2, CreditCard, Heart, Paintbrush, PenTool, Search, ShieldCheck, ShoppingBag, Sofa, Sparkles, Truck, X } from 'lucide-react'
 import { motion } from 'framer-motion'
 import styles from '@/app/page.module.css'
 
@@ -131,6 +132,8 @@ const shopCategories = [
 ]
 
 export default function Home() {
+  const [selectedProduct, setSelectedProduct] = useState<(typeof featuredOffers)[number] | null>(null)
+
   return (
     <>
       <div className={styles.announcement}>
@@ -217,7 +220,13 @@ export default function Home() {
           </div>
           <div className={styles.shopGrid}>
             {featuredOffers.map((offer) => (
-              <Link href={offer.link} className={styles.shopCard} key={offer.title}>
+              <button
+                type="button"
+                className={styles.shopCard}
+                key={offer.title}
+                onClick={() => setSelectedProduct(offer)}
+                aria-label={`Open ${offer.title}`}
+              >
                 <div className={styles.saleBadge}>{offer.discount}</div>
                 <div className={styles.shopActions}>
                   <span><Heart size={14} /> Wishlist</span>
@@ -231,11 +240,42 @@ export default function Home() {
                   <h3>{offer.title}</h3>
                   <p><del>{offer.oldPrice}</del> <strong>{offer.price}</strong></p>
                 </div>
-              </Link>
+              </button>
             ))}
           </div>
         </div>
       </section>
+
+      {selectedProduct && (
+        <div className={styles.productModal} onClick={() => setSelectedProduct(null)}>
+          <div className={styles.productDialog} onClick={(event) => event.stopPropagation()}>
+            <button
+              type="button"
+              className={styles.productClose}
+              onClick={() => setSelectedProduct(null)}
+              aria-label="Close product preview"
+            >
+              <X size={24} />
+            </button>
+            <div className={styles.productPreviewImage}>
+              <Image
+                src={selectedProduct.image}
+                alt={selectedProduct.title}
+                fill
+                sizes="(max-width: 768px) 92vw, 48vw"
+              />
+            </div>
+            <div className={styles.productPreviewInfo}>
+              <span>{selectedProduct.category}</span>
+              <h2>{selectedProduct.title}</h2>
+              <p><del>{selectedProduct.oldPrice}</del> <strong>{selectedProduct.price}</strong></p>
+              <Link href="/contact" className={styles.productInquiry}>
+                Inquire now <ArrowRight size={18} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
 
       <section className={styles.marquee} aria-label="Arah services">
         <div>

@@ -247,10 +247,21 @@
 .shopCard {
   position: relative;
   display: block;
+  width: 100%;
   min-width: 0;
   border: 1px solid #e9e3da;
   background: #ffffff;
   color: #1a1a2e;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.shopCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 35px rgba(26, 26, 46, 0.12);
 }
 
 .saleBadge {
@@ -329,6 +340,106 @@
   margin-right: 8px;
   color: #999;
   font-weight: 500;
+}
+
+.productModal {
+  position: fixed;
+  inset: 0;
+  z-index: 1600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  background: rgba(10, 10, 18, 0.72);
+}
+
+.productDialog {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.72fr);
+  width: min(980px, 100%);
+  max-height: 88vh;
+  overflow: auto;
+  background: #ffffff;
+  color: #1a1a2e;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.34);
+}
+
+.productClose {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.94);
+  color: #1a1a2e;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
+}
+
+.productPreviewImage {
+  position: relative;
+  min-height: 520px;
+  background: #f6f1e9;
+}
+
+.productPreviewImage :global(img) {
+  object-fit: cover;
+}
+
+.productPreviewInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(28px, 5vw, 48px);
+}
+
+.productPreviewInfo span {
+  margin-bottom: 12px;
+  color: #e94560;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.productPreviewInfo h2 {
+  margin-bottom: 16px;
+  color: #1a1a2e;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.05;
+}
+
+.productPreviewInfo p {
+  margin-bottom: 26px;
+  color: #e94560;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.productPreviewInfo del {
+  margin-right: 10px;
+  color: #8c8f98;
+  font-weight: 500;
+}
+
+.productInquiry {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: fit-content;
+  min-height: 46px;
+  padding: 0 20px;
+  background: #e94560;
+  color: #ffffff;
+  font-weight: 800;
 }
 
 @keyframes marqueeMove {
@@ -456,6 +567,33 @@
   .shopInfo p,
   .shopInfo small {
     font-size: 11px;
+  }
+
+  .productModal {
+    align-items: flex-end;
+    padding: 12px;
+  }
+
+  .productDialog {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-height: 90vh;
+  }
+
+  .productPreviewImage {
+    min-height: 320px;
+  }
+
+  .productPreviewInfo {
+    padding: 22px;
+  }
+
+  .productPreviewInfo h2 {
+    font-size: 28px;
+  }
+
+  .productInquiry {
+    width: 100%;
   }
 }
 
