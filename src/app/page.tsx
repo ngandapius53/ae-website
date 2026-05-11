@@ -139,7 +139,6 @@ export default function Home() {
   return (
     <>
       <div className={styles.announcement}>
-        <span>+256708924166</span>
         <span>Working Mon - Sun</span>
         <Link href="/contact">Order via WhatsApp</Link>
       </div>

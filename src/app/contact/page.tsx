@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { Check, Loader2, Mail, MapPin, Phone, Send } from 'lucide-react'
+import { Check, Loader2, Mail, MapPin, Send } from 'lucide-react'
 import styles from '@/app/contact/page.module.css'
 
 const serviceOptions = [
@@ -194,17 +194,6 @@ export default function ContactPage() {
                 </div>
                 <div className={styles.contactItem}>
                   <div className={styles.contactIcon}>
-                    <Phone size={24} />
-                  </div>
-                  <div>
-                    <h4>Phone</h4>
-                    <p>+256708924166</p>
-                    <p>+256702027566</p>
-                    <p>+256709928840</p>
-                  </div>
-                </div>
-                <div className={styles.contactItem}>
-                  <div className={styles.contactIcon}>
                     <Mail size={24} />
                   </div>
                   <div>
@@ -283,7 +272,7 @@ export default function ContactPage() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        placeholder="+256708924166"
+                        placeholder="Your phone number"
                         className={errors.phone ? styles.fieldError : ''}
                         aria-invalid={Boolean(errors.phone)}
                         aria-describedby={errors.phone ? 'phone-error' : undefined}
@@ -362,4 +351,3 @@ export default function ContactPage() {
     </>
   )
 }
-
