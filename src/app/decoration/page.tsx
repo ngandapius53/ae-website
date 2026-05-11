@@ -41,7 +41,7 @@ const projects = [
   { title: 'Decorative Niche Wall', category: 'Wall Niches', image: `${basePath}/decoration/sarah-enterprise/display-niche-wall-decor.jpeg` },
   { title: 'Decorative Display Shelves', category: 'Wall Niches', image: `${basePath}/furniture/quick/wall-shelves-display-white.jpeg` },
   { title: 'TV Niche Lighting Wall', category: 'Media Wall', image: `${basePath}/decoration/sarah-enterprise/tv-wall-niche-lighting.jpeg` },
-  { title: 'Curved Media Wall Console', category: 'Media Wall', image: `${basePath}/furniture/work/media-wall-unit-modern.jpeg` },
+  { title: 'Curved Media Wall Console', category: 'Media Wall', image: `${basePath}/furniture/work/tv-console-classic-white.jpeg` },
   { title: 'Circular TV Wall Concepts', category: 'Media Wall', image: `${basePath}/decoration/sarah-enterprise/tv-wall-circular-concepts-collage.jpeg` },
   { title: 'Illuminated TV Frame Wall', category: 'Media Wall', image: `${basePath}/decoration/sarah-enterprise/tv-wall-frame-illuminated.jpeg` },
   { title: 'Classic TV Wall Console', category: 'Media Wall', image: `${basePath}/furniture/quick/tv-wall-console-wood-white.jpeg` },

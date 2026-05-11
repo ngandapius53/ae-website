@@ -80,7 +80,7 @@ const featuredOffers = [
     price: '1,500,000 UGX',
     oldPrice: '1,800,000 UGX',
     discount: '-17%',
-    image: '/furniture/work/media-wall-unit-modern.jpeg',
+    image: '/furniture/work/tv-console-classic-white.jpeg',
     link: '/furniture'
   },
   {
@@ -107,7 +107,7 @@ const featuredOffers = [
     price: '2,400,000 UGX',
     oldPrice: '2,700,000 UGX',
     discount: '-11%',
-    image: '/furniture/work/wardrobe-matte-black.jpeg',
+    image: '/furniture/quick/wardrobe-matte-black-clean.jpeg',
     link: '/furniture'
   },
   {
