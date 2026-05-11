@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
-import { Menu, Search, X } from 'lucide-react'
+import { Menu, Search, ShoppingBag, X } from 'lucide-react'
 import styles from '@/components/Header.module.css'
 
 const navLinks = [
@@ -32,6 +32,7 @@ const searchRoutes = [
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false)
   const [query, setQuery] = useState('')
   const pathname = usePathname()
   const router = useRouter()
@@ -69,11 +70,13 @@ export default function Header() {
       router.push(match.href)
       setQuery('')
       setIsMobileMenuOpen(false)
+      setIsMobileSearchOpen(false)
       return
     }
 
     router.push('/contact')
     setIsMobileMenuOpen(false)
+    setIsMobileSearchOpen(false)
   }
 
   return (
@@ -85,11 +88,11 @@ export default function Header() {
         </Link>
 
         <div className={styles.utilityBar}>
-          <form className={styles.search} onSubmit={handleSearchSubmit}>
+          <form className={`${styles.search} ${isMobileSearchOpen ? styles.searchOpen : ''}`} onSubmit={handleSearchSubmit}>
             <Search size={16} />
             <input
               type="text"
-              placeholder="Search..."
+              placeholder="Search services..."
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               className={styles.searchInput}
@@ -97,6 +100,26 @@ export default function Header() {
             />
             <button type="submit" className={styles.searchSubmit}>Go</button>
           </form>
+        </div>
+
+        <div className={styles.mobileActions} aria-label="Quick actions">
+          <Link href="/" className={`${styles.languageLink} ${styles.languageActive}`} aria-label="Use English">
+            EN
+          </Link>
+          <Link href="/" className={styles.languageLink} aria-label="Use Japanese">
+            日本
+          </Link>
+          <button
+            type="button"
+            className={styles.iconAction}
+            onClick={() => setIsMobileSearchOpen(!isMobileSearchOpen)}
+            aria-label={isMobileSearchOpen ? 'Close search' : 'Open search'}
+          >
+            <Search size={22} />
+          </button>
+          <Link href="/checkout" className={styles.iconAction} aria-label="Open checkout">
+            <ShoppingBag size={22} />
+          </Link>
         </div>
 
         <nav className={`${styles.nav} ${isMobileMenuOpen ? styles.open : ''}`}>
@@ -115,6 +138,7 @@ export default function Header() {
         <button
           className={styles.mobileToggle}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>

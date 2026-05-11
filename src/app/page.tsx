@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Paintbrush, Sofa, PenTool, Building2 } from 'lucide-react'
+import { ArrowRight, Building2, Paintbrush, PenTool, Sofa, Sparkles } from 'lucide-react'
 import { motion } from 'framer-motion'
 import styles from '@/app/page.module.css'
 
@@ -22,6 +22,14 @@ const services = [
     link: '/furniture',
     color: '#0f3460',
     image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=400&fit=crop'
+  },
+  {
+    icon: Sparkles,
+    title: 'Luxury Fragrance',
+    description: 'Explore refined home and personal fragrance selections crafted to create memorable, elegant atmospheres.',
+    link: '/luxury-fragrance',
+    color: '#b76e79',
+    image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=600&h=400&fit=crop'
   },
   {
     icon: PenTool,
@@ -188,5 +196,4 @@ export default function Home() {
     </>
   )
 }
-
 

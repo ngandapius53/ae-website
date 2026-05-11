@@ -1,0 +1,66 @@
+.dock {
+  position: fixed;
+  right: 18px;
+  top: 50%;
+  z-index: 80;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transform: translateY(-50%);
+}
+
+.link {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.05s ease, box-shadow 0.05s ease;
+}
+
+.link:hover {
+  transform: translateX(-3px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+}
+
+.link:active {
+  transform: scale(0.96);
+}
+
+.facebook {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.instagram {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.twitter {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.whatsapp {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+@media (max-width: 768px) {
+  .dock {
+    right: 16px;
+    top: auto;
+    bottom: 18px;
+    flex-direction: row;
+    transform: none;
+  }
+
+  .link {
+    width: 44px;
+    height: 44px;
+  }
+
+  .link:hover {
+    transform: translateY(-2px);
+  }
+}
