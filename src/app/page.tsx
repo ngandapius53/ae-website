@@ -7,6 +7,8 @@ import { ArrowRight, Building2, CreditCard, Heart, Paintbrush, PenTool, Search, 
 import { motion } from 'framer-motion'
 import styles from '@/app/page.module.css'
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+
 const services = [
   {
     icon: Paintbrush,
@@ -233,7 +235,7 @@ export default function Home() {
                   <span>Compare</span>
                 </div>
                 <div className={styles.shopImage}>
-                  <Image src={offer.image} alt={offer.title} fill sizes="(max-width: 768px) 50vw, 33vw" />
+                  <Image src={`${basePath}${offer.image}`} alt={offer.title} fill sizes="(max-width: 768px) 50vw, 33vw" />
                 </div>
                 <div className={styles.shopInfo}>
                   <small>{offer.category}</small>
@@ -259,7 +261,7 @@ export default function Home() {
             </button>
             <div className={styles.productPreviewImage}>
               <Image
-                src={selectedProduct.image}
+                src={`${basePath}${selectedProduct.image}`}
                 alt={selectedProduct.title}
                 fill
                 sizes="(max-width: 768px) 92vw, 48vw"
