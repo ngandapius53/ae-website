@@ -24,17 +24,40 @@ const services = [
 type GalleryItem = {
   src: string
   title: string
+  location: string
+  price: string
 }
 
 const realEstateImageExt = /\.(?:jpe?g|png|webp)$/i
 
-function titleFromRealEstateFile(fileName: string) {
+const houseListingDetails: Record<string, { title: string; location: string; price: string }> = {
+  'house-001.webp': { title: 'Modern Family House', location: 'Kira', price: 'Price on request' },
+  'house-002.webp': { title: 'Ntinda Residential Home', location: 'Ntinda', price: 'Contact agent' },
+  'house-003.webp': { title: 'Elegant Storeyed House', location: 'Kyanja', price: 'Price on request' },
+  'house-004.webp': { title: 'Bungalow With Compound', location: 'Naalya', price: 'Contact agent' },
+  'house-005.webp': { title: 'Executive Villa', location: 'Muyenga', price: 'Price on request' },
+  'house-006.webp': { title: 'Compact Rental Home', location: 'Namugongo', price: 'Contact agent' },
+  'house-007.webp': { title: 'Modern Estate House', location: 'Bwebajja', price: 'Price on request' },
+  'house-008.webp': { title: 'Family Home With Parking', location: 'Najjera', price: 'Contact agent' },
+  'house-009.webp': { title: 'Newly Built Residence', location: 'Kira', price: 'Price on request' },
+  'house-010.webp': { title: 'Stylish Urban Home', location: 'Bukoto', price: 'Contact agent' },
+  'house-011.webp': { title: 'Gated Community House', location: 'Naalya', price: 'Price on request' },
+  'house-012.webp': { title: 'Spacious Residential House', location: 'Kiwatule', price: 'Contact agent' },
+  'house-013.webp': { title: 'Luxury Standalone House', location: 'Munyonyo', price: 'Price on request' },
+  'house-014.webp': { title: 'Family Villa With Garden', location: 'Seguku', price: 'Contact agent' },
+  'house-015.webp': { title: 'Move-In Ready Home', location: 'Gayaza', price: 'Price on request' },
+}
+
+function detailsFromRealEstateFile(fileName: string) {
+  const known = houseListingDetails[fileName]
+  if (known) return known
+
   const base = fileName.replace(/\.[^/.]+$/, '')
   const houseMatch = /^house-(\d+)$/i.exec(base)
-  if (houseMatch) return `House Photo #${houseMatch[1]}`
+  if (houseMatch) return { title: `House Listing #${houseMatch[1]}`, location: 'Kampala', price: 'Contact agent' }
   const reMatch = /^re-(\d+)$/i.exec(base)
-  if (reMatch) return `Property Photo #${reMatch[1]}`
-  return base.replace(/[-_]+/g, ' ').trim() || 'Property Photo'
+  if (reMatch) return { title: `Property Listing #${reMatch[1]}`, location: 'Uganda', price: 'Contact agent' }
+  return { title: base.replace(/[-_]+/g, ' ').trim() || 'Property Listing', location: 'Uganda', price: 'Contact agent' }
 }
 
 async function getRealEstateGalleryItems(basePathPrefix: string): Promise<GalleryItem[]> {
@@ -56,9 +79,10 @@ async function getRealEstateGalleryItems(basePathPrefix: string): Promise<Galler
       .filter((file) => realEstateImageExt.test(file))
       .sort((a, b) => a.localeCompare(b))
       .forEach((file) => {
+        const details = detailsFromRealEstateFile(file)
         items.push({
           src: `${basePathPrefix}/real-estate/${dir}/${file}`,
-          title: titleFromRealEstateFile(file),
+          ...details,
         })
       })
   }

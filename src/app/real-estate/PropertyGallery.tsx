@@ -7,6 +7,8 @@ import styles from '@/app/real-estate/page.module.css'
 type GalleryItem = {
   src: string
   title: string
+  location: string
+  price: string
 }
 
 export default function PropertyGallery({
@@ -46,8 +48,9 @@ export default function PropertyGallery({
               />
             </div>
             <div className={styles.propertyInfo}>
-              <span className={styles.propertyLocation}>Tap to view</span>
+              <span className={styles.propertyLocation}>{item.location}</span>
               <h4 className={styles.propertyTitle}>{item.title}</h4>
+              <p className={styles.propertyPrice}>{item.price}</p>
             </div>
           </a>
         ))}
@@ -70,4 +73,3 @@ export default function PropertyGallery({
     </>
   )
 }
-
