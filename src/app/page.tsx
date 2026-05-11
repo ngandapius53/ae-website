@@ -10,7 +10,8 @@ const services = [
   {
     icon: Paintbrush,
     title: 'Stylish Decoration',
-    description: 'Transform your space with our expert interior decoration services. We create stunning, personalized environments that reflect your unique style.',
+    eyebrow: '01 / Interiors',
+    description: 'Modern ceiling work, wall finishes, styling, and full interior decoration for homes, offices, and commercial spaces.',
     link: '/decoration',
     color: '#e94560',
     image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&h=400&fit=crop'
@@ -18,7 +19,8 @@ const services = [
   {
     icon: Sofa,
     title: 'Premium Furniture',
-    description: 'Discover handpicked furniture collections that combine comfort, quality, and timeless design for your home or office.',
+    eyebrow: '02 / Furniture',
+    description: 'Custom and ready furniture selections with practical comfort, clean finishes, and a polished modern look.',
     link: '/furniture',
     color: '#0f3460',
     image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=400&fit=crop'
@@ -26,7 +28,8 @@ const services = [
   {
     icon: Sparkles,
     title: 'Luxury Fragrance',
-    description: 'Explore refined home and personal fragrance selections crafted to create memorable, elegant atmospheres.',
+    eyebrow: '03 / Fragrance',
+    description: 'Elegant personal and home fragrances selected to create a memorable atmosphere for daily living and special spaces.',
     link: '/luxury-fragrance',
     color: '#b76e79',
     image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=600&h=400&fit=crop'
@@ -34,7 +37,8 @@ const services = [
   {
     icon: PenTool,
     title: 'Graphic Design',
-    description: 'Elevate your brand with creative graphic design solutions. Logos, branding, marketing materials, and visual identity.',
+    eyebrow: '04 / Branding',
+    description: 'Logos, brand identity, posters, print work, and digital graphics made for businesses that need to be seen clearly.',
     link: '/graphic-design',
     color: '#16213e',
     image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=600&h=400&fit=crop'
@@ -42,7 +46,8 @@ const services = [
   {
     icon: Building2,
     title: 'Real Estate',
-    description: 'Find your dream property with our comprehensive real estate services. Buy, sell, rent with expert guidance.',
+    eyebrow: '05 / Property',
+    description: 'Property support for buyers, renters, sellers, and families looking for dependable real estate guidance.',
     link: '/real-estate',
     color: '#e94560',
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop'
@@ -59,6 +64,12 @@ const features = [
 export default function Home() {
   return (
     <>
+      <div className={styles.announcement}>
+        <span>ARAH ENTERPRISES</span>
+        <span>Decoration · Furniture · Fragrance · Design · Real Estate</span>
+        <Link href="/contact">Book a consultation</Link>
+      </div>
+
       <section className={styles.hero}>
         <div className={styles.heroBg}>
           <Image
@@ -78,7 +89,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            Welcome to
+            Kampala Ntinda · Uganda
           </motion.span>
           <motion.h1 
             className={styles.heroTitle}
@@ -86,7 +97,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            Arah Enterprises
+            Uganda spaces, crafted with modern detail.
           </motion.h1>
           <motion.p 
             className={styles.heroDescription}
@@ -94,7 +105,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
           >
-            Your one-stop solution for Decoration, Furniture, Luxury Fragrance, Graphic Design & Real Estate
+            Interiors, furniture, luxury fragrance, graphic design, and real estate support brought together under one trusted brand.
           </motion.p>
           <motion.div 
             className={styles.heroButtons}
@@ -103,10 +114,10 @@ export default function Home() {
             transition={{ delay: 0.8 }}
           >
             <Link href="/contact" className="btn btn-primary">
-              Get Started <ArrowRight size={20} />
+              Start a Project <ArrowRight size={20} />
             </Link>
             <Link href="/decoration" className="btn btn-secondary">
-              View Portfolio
+              Explore Services
             </Link>
           </motion.div>
         </div>
@@ -116,15 +127,23 @@ export default function Home() {
         </div>
       </section>
 
+      <section className={styles.marquee} aria-label="Arah services">
+        <div>
+          Decoration ✦ Furniture ✦ Luxury Fragrance ✦ Graphic Design ✦ Real Estate ✦ Kampala Ntinda ✦
+          Decoration ✦ Furniture ✦ Luxury Fragrance ✦ Graphic Design ✦ Real Estate ✦ Kampala Ntinda ✦
+        </div>
+      </section>
+
       <section className={`section ${styles.services}`}>
         <div className="container">
-          <div className="text-center">
-            <h2 className="section-title">Our Services</h2>
+          <div className={styles.sectionIntro}>
+            <span>Explore Our Craft</span>
+            <h2 className="section-title">From room concept to finished lifestyle.</h2>
             <p className="section-subtitle">
-              Comprehensive design and real estate solutions tailored to your needs
+              ARAH brings practical Ugandan service, careful finishing, and modern presentation into every project.
             </p>
           </div>
-          <div className="grid grid-2">
+          <div className={styles.collectionGrid}>
             {services.map((service, index) => (
               <motion.div
                 key={service.title}
@@ -143,9 +162,12 @@ export default function Home() {
                   />
                 </div>
                 <div className={styles.serviceContent}>
-                  <Link href={service.link} className={styles.serviceIconButton} style={{ background: service.color }} aria-label={`Open ${service.title} service page`}>
-                    <service.icon size={32} color="#ffffff" />
-                  </Link>
+                  <div className={styles.serviceMeta}>
+                    <span>{service.eyebrow}</span>
+                    <Link href={service.link} className={styles.serviceIconButton} style={{ background: service.color }} aria-label={`Open ${service.title} service page`}>
+                      <service.icon size={24} color="#ffffff" />
+                    </Link>
+                  </div>
                   <h3 className={styles.serviceTitle}>
                     <Link href={service.link} className={styles.serviceTitleLink}>{service.title}</Link>
                   </h3>
@@ -196,4 +218,3 @@ export default function Home() {
     </>
   )
 }
-
