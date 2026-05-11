@@ -162,6 +162,175 @@
   animation: marqueeMove 28s linear infinite;
 }
 
+.shopShell {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 30px;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 70px 20px 40px;
+  background: #ffffff;
+}
+
+.categoryPanel {
+  align-self: start;
+  border: 1px solid #e6e2da;
+  background: #ffffff;
+}
+
+.panelTitle {
+  padding: 16px 18px;
+  background: #e94560;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.categoryLink {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px;
+  border-bottom: 1px solid #eee9e1;
+  color: #1a1a2e;
+  font-size: 14px;
+}
+
+.categoryLink small {
+  color: #777;
+  white-space: nowrap;
+}
+
+.shopToolbar {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.shopToolbar span,
+.howIntro span {
+  display: inline-block;
+  margin-bottom: 6px;
+  color: #e94560;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.shopToolbar h2,
+.howIntro h2 {
+  color: #1a1a2e;
+  font-size: clamp(30px, 4vw, 48px);
+}
+
+.shopToolbar p {
+  color: #6c757d;
+}
+
+.shopToolbar a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #e94560;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.shopGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.shopCard {
+  position: relative;
+  display: block;
+  min-width: 0;
+  border: 1px solid #e9e3da;
+  background: #ffffff;
+  color: #1a1a2e;
+}
+
+.saleBadge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  padding: 5px 9px;
+  background: #e94560;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.shopActions {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.shopActions span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 8px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #1a1a2e;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.shopImage {
+  position: relative;
+  aspect-ratio: 1.08;
+  overflow: hidden;
+  background: #f6f1e9;
+}
+
+.shopImage :global(img) {
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.shopCard:hover .shopImage img {
+  transform: scale(1.05);
+}
+
+.shopInfo {
+  padding: 16px;
+}
+
+.shopInfo small {
+  display: block;
+  margin-bottom: 8px;
+  color: #777;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.shopInfo h3 {
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.shopInfo p {
+  color: #e94560;
+  font-weight: 700;
+}
+
+.shopInfo del {
+  margin-right: 8px;
+  color: #999;
+  font-weight: 500;
+}
+
 @keyframes marqueeMove {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -241,6 +410,52 @@
 
   .sectionIntro {
     margin-bottom: 34px;
+  }
+
+  .shopShell {
+    display: block;
+    padding: 28px 14px 38px;
+  }
+
+  .categoryPanel {
+    margin-bottom: 28px;
+  }
+
+  .categoryLink {
+    padding: 12px 14px;
+  }
+
+  .shopToolbar {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .shopGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .shopActions {
+    display: none;
+  }
+
+  .saleBadge {
+    top: 8px;
+    left: 8px;
+    font-size: 10px;
+  }
+
+  .shopInfo {
+    padding: 11px;
+  }
+
+  .shopInfo h3 {
+    font-size: 14px;
+  }
+
+  .shopInfo p,
+  .shopInfo small {
+    font-size: 11px;
   }
 }
 
@@ -358,6 +573,47 @@
 
 .featured {
   background: #ffffff;
+}
+
+.howShop {
+  background: #ffffff;
+}
+
+.howIntro {
+  max-width: 760px;
+  margin-bottom: 34px;
+}
+
+.howIntro p {
+  margin-top: 12px;
+  color: #6c757d;
+}
+
+.howGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.howGrid > div {
+  padding: 28px;
+  border: 1px solid #e9e3da;
+  background: #f6f1e9;
+}
+
+.howGrid svg {
+  color: #e94560;
+  margin-bottom: 18px;
+}
+
+.howGrid h3 {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.howGrid p {
+  color: #5e6470;
+  line-height: 1.75;
 }
 
 .sectionHeaderRow {
@@ -481,6 +737,33 @@
   padding: 80px 0;
 }
 
+.trustBadges {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 62px;
+}
+
+.trustBadges > div {
+  padding: 26px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+}
+
+.trustBadges svg {
+  color: #e94560;
+  margin-bottom: 14px;
+}
+
+.trustBadges h3 {
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+
+.trustBadges p {
+  color: rgba(255, 255, 255, 0.68);
+}
+
 .featuresGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -551,6 +834,16 @@
 
   .rootsText {
     padding: 60px 22px;
+  }
+
+  .howGrid,
+  .trustBadges {
+    grid-template-columns: 1fr;
+  }
+
+  .howGrid > div,
+  .trustBadges > div {
+    padding: 22px;
   }
 }
 

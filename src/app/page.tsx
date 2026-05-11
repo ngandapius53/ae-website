@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Building2, Paintbrush, PenTool, Sofa, Sparkles } from 'lucide-react'
+import { ArrowRight, Building2, CreditCard, Heart, Paintbrush, PenTool, Search, ShieldCheck, ShoppingBag, Sofa, Sparkles, Truck } from 'lucide-react'
 import { motion } from 'framer-motion'
 import styles from '@/app/page.module.css'
 
@@ -63,42 +63,79 @@ const features = [
 
 const featuredOffers = [
   {
-    title: 'Interior Consultation',
-    category: 'Decoration',
-    price: 'From UGX 150,000',
-    image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&h=600&fit=crop',
-    link: '/decoration'
-  },
-  {
-    title: 'Custom Sofa Planning',
-    category: 'Furniture',
-    price: 'Quote on request',
-    image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=600&fit=crop',
+    title: 'L-Shaped Sofa Set',
+    category: 'Sofasets',
+    price: '2,500,000 UGX',
+    oldPrice: '2,800,000 UGX',
+    discount: '-11%',
+    image: '/furniture/work/l-shaped-sofa-gray.jpeg',
     link: '/furniture'
   },
   {
-    title: 'Premium Fragrance Set',
-    category: 'Luxury Fragrance',
-    price: 'Contact for price',
-    image: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=600&h=600&fit=crop',
-    link: '/luxury-fragrance'
+    title: 'Modern TV Wall Unit',
+    category: 'TV Stands',
+    price: '1,500,000 UGX',
+    oldPrice: '1,800,000 UGX',
+    discount: '-17%',
+    image: '/furniture/work/media-wall-unit-modern.jpeg',
+    link: '/furniture'
   },
   {
-    title: 'Brand Starter Package',
-    category: 'Graphic Design',
-    price: 'From UGX 250,000',
-    image: 'https://images.unsplash.com/photo-1635405074683-96d6921a2a68?w=600&h=600&fit=crop',
-    link: '/graphic-design'
+    title: 'Upholstered Bed Frame',
+    category: 'Beds',
+    price: '3,500,000 UGX',
+    oldPrice: '4,000,000 UGX',
+    discount: '-13%',
+    image: '/furniture/work/bedframe-upholstered-gray.jpeg',
+    link: '/furniture'
+  },
+  {
+    title: 'Coffee Table Set',
+    category: 'Centre Tables',
+    price: '1,000,000 UGX',
+    oldPrice: '1,200,000 UGX',
+    discount: '-17%',
+    image: '/furniture/work/coffee-table-fluted-black.jpeg',
+    link: '/furniture'
+  },
+  {
+    title: 'Wardrobe Matte Black',
+    category: 'Wardrobes',
+    price: '2,400,000 UGX',
+    oldPrice: '2,700,000 UGX',
+    discount: '-11%',
+    image: '/furniture/work/wardrobe-matte-black.jpeg',
+    link: '/furniture'
+  },
+  {
+    title: 'Kitchen Cabinet Unit',
+    category: 'Kitchens',
+    price: '1,500,000 UGX',
+    oldPrice: '1,800,000 UGX',
+    discount: '-17%',
+    image: '/furniture/work/kitchen-unit-compact-white.jpeg',
+    link: '/furniture'
   }
+]
+
+const shopCategories = [
+  { name: 'Sofasets', count: 84, href: '/furniture' },
+  { name: 'Beds', count: 78, href: '/furniture' },
+  { name: 'Dining Tables', count: 48, href: '/furniture' },
+  { name: 'TV Stands', count: 27, href: '/furniture' },
+  { name: 'Wardrobes', count: 24, href: '/furniture' },
+  { name: 'Centre Tables', count: 21, href: '/furniture' },
+  { name: 'Cupboards', count: 16, href: '/furniture' },
+  { name: 'Shoe Racks', count: 10, href: '/furniture' }
 ]
 
 export default function Home() {
   return (
     <>
       <div className={styles.announcement}>
-        <span>ARAH ENTERPRISES</span>
-        <span>Decoration · Furniture · Fragrance · Design · Real Estate</span>
-        <Link href="/contact">Book a consultation</Link>
+        <span>+256708924166</span>
+        <span>Working Mon - Sun</span>
+        <Link href="/contact">Order via WhatsApp</Link>
       </div>
 
       <section className={styles.hero}>
@@ -120,7 +157,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            Kampala Ntinda · Uganda
+            The No. 1 ARAH Furniture Store
           </motion.span>
           <motion.h1 
             className={styles.heroTitle}
@@ -128,7 +165,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            Uganda spaces, crafted with modern detail.
+            Furniture, interiors and home pieces delivered in Uganda.
           </motion.h1>
           <motion.p 
             className={styles.heroDescription}
@@ -136,7 +173,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
           >
-            Interiors, furniture, luxury fragrance, graphic design, and real estate support brought together under one trusted brand.
+            Shop sofasets, beds, TV stands, wardrobes, dining sets, decoration, fragrance and custom interior services from Kampala Ntinda.
           </motion.p>
           <motion.div 
             className={styles.heroButtons}
@@ -145,16 +182,57 @@ export default function Home() {
             transition={{ delay: 0.8 }}
           >
             <Link href="/contact" className="btn btn-primary">
-              Start a Project <ArrowRight size={20} />
+              Inquire on WhatsApp <ArrowRight size={20} />
             </Link>
-            <Link href="/decoration" className="btn btn-secondary">
-              Explore Services
+            <Link href="/furniture" className="btn btn-secondary">
+              Shop Furniture
             </Link>
           </motion.div>
         </div>
         <div className={styles.heroScroll}>
           <span>Scroll</span>
           <div className={styles.scrollLine}></div>
+        </div>
+      </section>
+
+      <section className={styles.shopShell}>
+        <aside className={styles.categoryPanel}>
+          <div className={styles.panelTitle}>All Departments</div>
+          {shopCategories.map((category) => (
+            <Link href={category.href} key={category.name} className={styles.categoryLink}>
+              <span>{category.name}</span>
+              <small>{category.count} Items</small>
+            </Link>
+          ))}
+        </aside>
+        <div className={styles.shopMain}>
+          <div className={styles.shopToolbar}>
+            <div>
+              <span>Furniture Collection</span>
+              <h2>Latest Products</h2>
+              <p>Showing 1-6 of our popular furniture requests</p>
+            </div>
+            <Link href="/furniture">More Furniture <ArrowRight size={16} /></Link>
+          </div>
+          <div className={styles.shopGrid}>
+            {featuredOffers.map((offer) => (
+              <Link href={offer.link} className={styles.shopCard} key={offer.title}>
+                <div className={styles.saleBadge}>{offer.discount}</div>
+                <div className={styles.shopActions}>
+                  <span><Heart size={14} /> Wishlist</span>
+                  <span>Compare</span>
+                </div>
+                <div className={styles.shopImage}>
+                  <Image src={offer.image} alt={offer.title} fill sizes="(max-width: 768px) 50vw, 33vw" />
+                </div>
+                <div className={styles.shopInfo}>
+                  <small>{offer.category}</small>
+                  <h3>{offer.title}</h3>
+                  <p><del>{offer.oldPrice}</del> <strong>{offer.price}</strong></p>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -213,26 +291,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={`section ${styles.featured}`}>
+      <section className={`section ${styles.howShop}`}>
         <div className="container">
-          <div className={styles.sectionHeaderRow}>
-            <div>
-              <span>Featured Services</span>
-              <h2>Popular requests, picked for you.</h2>
-            </div>
-            <Link href="/contact">View all services <ArrowRight size={16} /></Link>
+          <div className={styles.howIntro}>
+            <span>How It Works</span>
+            <h2>Shop, inquire and receive your furniture at the door.</h2>
+            <p>Search products, browse categories, send your request, confirm details, and arrange delivery with the ARAH team.</p>
           </div>
-          <div className={styles.productGrid}>
-            {featuredOffers.map((offer) => (
-              <Link href={offer.link} className={styles.productCard} key={offer.title}>
-                <div className={styles.productImage}>
-                  <Image src={offer.image} alt={offer.title} fill sizes="(max-width: 768px) 50vw, 25vw" />
-                </div>
-                <span>{offer.category}</span>
-                <h3>{offer.title}</h3>
-                <p>{offer.price}</p>
-              </Link>
-            ))}
+          <div className={styles.howGrid}>
+            <div><Search size={26} /><h3>Search Products</h3><p>Use the search button to find sofas, beds, tables, wardrobes, TV stands, or decoration items.</p></div>
+            <div><ShoppingBag size={26} /><h3>Send Inquiry</h3><p>Open the item or service page and contact us with the exact product or custom work you need.</p></div>
+            <div><Truck size={26} /><h3>Delivery Support</h3><p>We help arrange delivery and installation details around Kampala and nearby areas.</p></div>
           </div>
         </div>
       </section>
@@ -261,6 +330,11 @@ export default function Home() {
 
       <section className={styles.features}>
         <div className="container">
+          <div className={styles.trustBadges}>
+            <div><Truck size={28} /><h3>We Deliver To Your Door</h3><p>A delivery service you can depend on.</p></div>
+            <div><ShieldCheck size={28} /><h3>Customer Support</h3><p>Satisfied customers are our best ads.</p></div>
+            <div><CreditCard size={28} /><h3>Secure Payments</h3><p>Deposit and payment guidance available.</p></div>
+          </div>
           <div className={styles.featuresGrid}>
             {features.map((feature, index) => (
               <motion.div
