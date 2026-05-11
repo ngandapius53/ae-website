@@ -121,6 +121,7 @@ const featuredOffers = [
 const shopCategories = [
   { name: 'Sofasets', count: 84, href: '/furniture' },
   { name: 'Beds', count: 78, href: '/furniture' },
+  { name: 'Perfumes', count: 23, href: '/luxury-fragrance' },
   { name: 'Dining Tables', count: 48, href: '/furniture' },
   { name: 'TV Stands', count: 27, href: '/furniture' },
   { name: 'Wardrobes', count: 24, href: '/furniture' },

@@ -7,11 +7,37 @@ import styles from './page.module.css'
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 
+const fragranceNames = [
+  'Royal Oud Intense',
+  'Amber Night',
+  'Desert Rose Musk',
+  'Velvet Vanilla Oud',
+  'Arabian Leather',
+  'Golden Saffron',
+  'Midnight Bakhoor',
+  'White Musk Classic',
+  'Sandalwood Majesty',
+  'Rose Oud Elixir',
+  'Blue Ocean Pour Homme',
+  'Imperial Amber',
+  'Stronger With You',
+  'Black Orchid Oud',
+  'Sweet Tobacco',
+  'Ameer Al Arab',
+  'Musk Al Tahara',
+  'Silver Essence',
+  'Dubai Gold',
+  'Oud Mood',
+  'Fresh Citrus Musk',
+  'Royal Jasmine',
+  'Intense Night Oud',
+]
+
 const fragrances = Array.from({ length: 23 }, (_, index) => {
   const imageNumber = String(index + 1).padStart(2, '0')
   return {
     id: index + 1,
-    name: `Luxury Fragrance ${imageNumber}`,
+    name: fragranceNames[index],
     price: 'Contact for price',
     image: `${basePath}/luxury-fragrance/lf-${imageNumber}.jpeg`,
   }
