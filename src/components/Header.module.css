@@ -438,6 +438,52 @@
 }
 
 @media (max-width: 768px) {
+  .header {
+    top: 30px;
+    padding: 10px 0;
+    background: rgba(246, 241, 233, 0.96);
+    backdrop-filter: blur(12px);
+  }
+
+  .logo {
+    font-size: 15px;
+  }
+
+  .logoPrimary {
+    color: #1a1a2e;
+  }
+
+  .logoAccent {
+    color: #e94560;
+  }
+
+  .mobileToggle,
+  .iconAction,
+  .languageLink {
+    color: #1a1a2e;
+  }
+
+  .languageActive {
+    color: #ff2f3d;
+  }
+
+  .mobileActions {
+    gap: 11px;
+  }
+
+  .languageLink {
+    font-size: 12px;
+  }
+
+  .iconAction {
+    width: 24px;
+    height: 24px;
+  }
+
+  .nav {
+    top: 30px;
+  }
+
   .utilityBar {
     position: static;
     order: 3;

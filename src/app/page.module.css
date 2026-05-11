@@ -184,27 +184,63 @@
 
 @media (max-width: 768px) {
   .announcement {
-    position: static;
-    flex-wrap: wrap;
-    gap: 8px 14px;
+    position: fixed;
+    top: 0;
+    min-height: 30px;
+    gap: 10px;
+    padding: 6px 10px;
+    overflow-x: auto;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
     text-align: center;
-    line-height: 1.4;
+    white-space: nowrap;
+    font-size: 10px;
+    line-height: 1.2;
   }
 
   .hero {
-    min-height: 86vh;
-    padding-top: 0;
+    min-height: 92vh;
+    align-items: flex-end;
+    padding-top: 30px;
   }
 
   .heroContent {
-    padding: 90px 18px 40px;
+    padding: 120px 18px 86px;
   }
 
   .heroTitle {
-    font-size: 40px;
+    font-size: 38px;
+    max-width: 360px;
   }
   .heroDescription {
-    font-size: 16px;
+    max-width: 340px;
+    font-size: 14px;
+    line-height: 1.65;
+    margin-bottom: 24px;
+  }
+
+  .heroTag {
+    padding: 7px 12px;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    margin-bottom: 18px;
+  }
+
+  .heroButtons {
+    gap: 10px;
+  }
+
+  .heroScroll {
+    display: none;
+  }
+
+  .marquee div {
+    padding: 13px 0;
+    font-size: 11px;
+  }
+
+  .sectionIntro {
+    margin-bottom: 34px;
   }
 }
 
@@ -493,8 +529,20 @@
   }
 
   .productGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .productCard {
+    min-width: 72vw;
+    scroll-snap-align: start;
+  }
+
+  .productCard h3 {
+    font-size: 18px;
   }
 
   .roots {
