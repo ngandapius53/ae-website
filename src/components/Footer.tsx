@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Facebook, Instagram, Mail, MapPin } from 'lucide-react'
+import { Facebook, Instagram, Mail, Phone, MapPin } from 'lucide-react'
 import styles from '@/components/Footer.module.css'
 
 function XLogoIcon({ size = 20 }: { size?: number }) {
@@ -99,6 +99,16 @@ export default function Footer() {
                 <div className={styles.contactLineLabel}>Address</div>
                 <span>KAMPALA NTINDA</span>
               </div>
+            </div>
+            <div className={styles.contactItem}>
+              <Phone size={18} />
+              <span>
+                +256708924166
+                <br />
+                +256702027566
+                <br />
+                +256709928840
+              </span>
             </div>
             <div className={styles.contactItem}>
               <Mail size={18} />
