@@ -8,29 +8,29 @@ import styles from './page.module.css'
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 
 const fragranceNames = [
-  'Royal Oud Intense',
-  'Amber Night',
-  'Desert Rose Musk',
-  'Velvet Vanilla Oud',
-  'Arabian Leather',
-  'Golden Saffron',
-  'Midnight Bakhoor',
-  'White Musk Classic',
-  'Sandalwood Majesty',
-  'Rose Oud Elixir',
-  'Blue Ocean Pour Homme',
-  'Imperial Amber',
-  'Stronger With You',
-  'Black Orchid Oud',
-  'Sweet Tobacco',
-  'Ameer Al Arab',
-  'Musk Al Tahara',
-  'Silver Essence',
-  'Dubai Gold',
-  'Oud Mood',
-  'Fresh Citrus Musk',
-  'Royal Jasmine',
-  'Intense Night Oud',
+  'Suave Eau de Parfum',
+  'Sculpture Couple Perfume Set',
+  'Elyse Pastel Perfume Set',
+  'NOW Eau de Parfum',
+  'Hayaati by Lattafa',
+  'Asad by Lattafa',
+  'Oud Madness',
+  'NOW Rouge',
+  'Badee Al Oud Noble Blush',
+  'Horse Collection Eau de Parfum',
+  'Blush Body Mist Set',
+  'You Collection',
+  'Creed Aventus',
+  'Yara by Lattafa',
+  'Mousuf Daisy',
+  'Bound for Men by Sapil',
+  'Elyse Apple Rouge',
+  'Ramz Lattafa',
+  'Proud of You Absolute',
+  'Taskeen Caramel Cascade',
+  'Vanilla Collection',
+  'Powdery Rose',
+  'Juicy',
 ]
 
 const fragrances = Array.from({ length: 23 }, (_, index) => {
@@ -52,7 +52,7 @@ export default function LuxuryFragrance() {
         <div className={styles.heroOverlay}></div>
         <Image
           src={`${basePath}/luxury-fragrance/lf-13.jpeg`}
-          alt="Stronger With You fragrance collection"
+          alt="Creed Aventus fragrance"
           fill
           className={styles.heroImage}
           priority
@@ -84,7 +84,7 @@ export default function LuxuryFragrance() {
               <div className={styles.imageContainer}>
                 <Image
                   src={perfume.image}
-                  alt={`Perfume ${perfume.id}`}
+                  alt={perfume.name}
                   fill
                   className={styles.cardImage}
                 />
