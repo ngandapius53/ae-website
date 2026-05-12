@@ -1,9 +1,9 @@
 .announcement {
-  position: fixed;
-  top: 0;
+  position: relative;
+  top: auto;
   left: 0;
   right: 0;
-  z-index: 1002;
+  z-index: 1;
   min-height: 34px;
   display: flex;
   align-items: center;
@@ -29,7 +29,7 @@
   position: relative;
   background: #1a1a2e;
   overflow: hidden;
-  padding-top: 34px;
+  padding-top: 0;
 }
 
 .heroBg {
@@ -541,8 +541,8 @@
 
 @media (max-width: 768px) {
   .announcement {
-    position: fixed;
-    top: 0;
+    position: relative;
+    top: auto;
     min-height: 30px;
     gap: 10px;
     padding: 6px 10px;
@@ -558,11 +558,11 @@
   .hero {
     min-height: 92vh;
     align-items: flex-end;
-    padding-top: 30px;
+    padding-top: 0;
   }
 
   .heroContent {
-    padding: 120px 18px 86px;
+    padding: 64px 18px 86px;
   }
 
   .heroLogoWrap {

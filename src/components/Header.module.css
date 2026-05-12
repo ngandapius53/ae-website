@@ -1,19 +1,20 @@
 .header {
-  position: fixed;
-  top: 34px;
+  position: sticky;
+  top: 0;
   left: 0;
   right: 0;
   z-index: 1100;
-  padding: 20px 0;
+  padding: 10px 0;
   transition: all 0.05s ease;
-  background: transparent;
+  background: #24170f;
+  box-shadow: 0 8px 24px rgba(55, 36, 19, 0.14);
 }
 
 .header.scrolled {
-  background: transparent;
+  background: #24170f;
   backdrop-filter: none;
-  padding: 15px 0;
-  box-shadow: none;
+  padding: 8px 0;
+  box-shadow: 0 8px 24px rgba(55, 36, 19, 0.14);
 }
 
 .container {
@@ -41,8 +42,8 @@
 }
 
 .logoImage {
-  width: 56px;
-  height: 56px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid rgba(246, 241, 233, 0.9);
@@ -146,7 +147,7 @@
 .nav {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 16px;
   flex-shrink: 1;
   min-width: 0;
 }
@@ -359,8 +360,8 @@
 @media (max-width: 1200px) {
   .header {
     top: 0;
-    padding: 14px 0;
-    background: transparent;
+    padding: 9px 0;
+    background: #24170f;
     backdrop-filter: none;
   }
 
@@ -384,7 +385,7 @@
     width: 80%;
     max-width: 400px;
     height: 100vh;
-    background: #1a1a2e;
+    background: #24170f;
     flex-direction: column;
     justify-content: center;
     gap: 30px;
@@ -483,9 +484,9 @@
 
 @media (max-width: 768px) {
   .header {
-    top: 30px;
-    padding: 10px 0;
-    background: transparent;
+    top: 0;
+    padding: 8px 0;
+    background: #24170f;
     backdrop-filter: none;
   }
 
@@ -526,7 +527,7 @@
   }
 
   .nav {
-    top: 30px;
+    top: 0;
   }
 
   .utilityBar {

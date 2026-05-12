@@ -1,7 +1,6 @@
 .strip {
-  position: sticky;
-  top: 0;
-  z-index: 900;
+  position: relative;
+  z-index: 800;
   background: #ffffff;
   border-bottom: 1px solid #e8ded1;
   box-shadow: 0 8px 24px rgba(55, 36, 19, 0.08);
@@ -9,9 +8,9 @@
 
 .inner {
   max-width: 1320px;
-  min-height: 92px;
+  min-height: 54px;
   margin: 0 auto;
-  padding: 12px 20px;
+  padding: 8px 20px;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
@@ -26,8 +25,8 @@
 }
 
 .logo {
-  width: 72px;
-  height: 72px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #c99451;
@@ -36,7 +35,7 @@
 .brand span {
   display: block;
   color: #9b1f32;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -45,7 +44,7 @@
 .brand strong {
   display: block;
   font-family: var(--font-heading);
-  font-size: 24px;
+  font-size: 18px;
   line-height: 1.05;
 }
 
@@ -75,7 +74,7 @@
 }
 
 .cta {
-  min-height: 42px;
+  min-height: 36px;
   padding: 0 16px;
   display: inline-flex;
   align-items: center;
@@ -89,7 +88,7 @@
 
 @media (max-width: 900px) {
   .strip {
-    top: 30px;
+    top: auto;
   }
 
   .inner {
@@ -108,8 +107,8 @@
   }
 
   .logo {
-    width: 54px;
-    height: 54px;
+    width: 38px;
+    height: 38px;
   }
 }
 
