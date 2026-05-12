@@ -12,45 +12,45 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 const services = [
   {
     icon: Paintbrush,
-    title: 'Stylish Decoration',
-    eyebrow: '01 / Interiors',
-    description: 'Modern ceiling work, wall finishes, styling, and full interior decoration for homes, offices, and commercial spaces.',
+    title: 'Custom Interior Finishing',
+    eyebrow: '01 / Workshop',
+    description: 'Ceiling work, wall features, display shelves, TV walls, and finishing that supports your furniture layout.',
     link: '/decoration',
     color: '#e94560',
     image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&h=400&fit=crop'
   },
   {
     icon: Sofa,
-    title: 'Premium Furniture',
+    title: 'Furniture Workshop',
     eyebrow: '02 / Furniture',
-    description: 'Custom and ready furniture selections with practical comfort, clean finishes, and a polished modern look.',
+    description: 'Sofasets, beds, wardrobes, TV stands, centre tables, cupboards, shoe racks, and custom furniture requests.',
     link: '/furniture',
     color: '#0f3460',
     image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=400&fit=crop'
   },
   {
     icon: Sparkles,
-    title: 'Luxury Fragrance',
+    title: 'Perfumes & Home Scents',
     eyebrow: '03 / Fragrance',
-    description: 'Elegant personal and home fragrances selected to create a memorable atmosphere for daily living and special spaces.',
+    description: 'Perfumes and room scents for customers who want their home or office to feel complete after furnishing.',
     link: '/luxury-fragrance',
     color: '#b76e79',
     image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=600&h=400&fit=crop'
   },
   {
     icon: PenTool,
-    title: 'Graphic Design',
+    title: 'Catalog & Brand Design',
     eyebrow: '04 / Branding',
-    description: 'Logos, brand identity, posters, print work, and digital graphics made for businesses that need to be seen clearly.',
+    description: 'Furniture catalogs, posters, labels, business cards, and promotional artwork for shop and workshop clients.',
     link: '/graphic-design',
     color: '#16213e',
     image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=600&h=400&fit=crop'
   },
   {
     icon: Building2,
-    title: 'Real Estate',
-    eyebrow: '05 / Property',
-    description: 'Property support for buyers, renters, sellers, and families looking for dependable real estate guidance.',
+    title: 'Homes & Property Support',
+    eyebrow: '05 / Homes',
+    description: 'Property support connected to real homes, interiors, furnishing plans, and customer move-in needs.',
     link: '/real-estate',
     color: '#e94560',
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop'
@@ -412,8 +412,8 @@ export default function Home() {
 
       <section className={styles.marquee} aria-label="Arah services">
         <div>
-          Decoration ✦ Furniture ✦ Luxury Fragrance ✦ Graphic Design ✦ Real Estate ✦ Kampala Ntinda ✦
-          Decoration ✦ Furniture ✦ Luxury Fragrance ✦ Graphic Design ✦ Real Estate ✦ Kampala Ntinda ✦
+          Sofasets ✦ Beds ✦ Wardrobes ✦ TV Stands ✦ Centre Tables ✦ Perfumes ✦ Kampala Ntinda ✦
+          Sofasets ✦ Beds ✦ Wardrobes ✦ TV Stands ✦ Centre Tables ✦ Perfumes ✦ Kampala Ntinda ✦
         </div>
       </section>
 

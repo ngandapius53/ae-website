@@ -6,11 +6,13 @@ import { Check, Loader2, Mail, MapPin, Phone, Send } from 'lucide-react'
 import styles from '@/app/contact/page.module.css'
 
 const serviceOptions = [
-  { value: 'decoration', label: 'Stylish Decoration' },
-  { value: 'furniture', label: 'Furniture' },
-  { value: 'luxury-fragrance', label: 'Luxury Fragrance' },
-  { value: 'graphic-design', label: 'Graphic Design' },
-  { value: 'real-estate', label: 'Real Estate' },
+  { value: 'furniture', label: 'Furniture Order' },
+  { value: 'sofasets', label: 'Sofasets' },
+  { value: 'beds', label: 'Beds' },
+  { value: 'wardrobes', label: 'Wardrobes' },
+  { value: 'tv-stands', label: 'TV Stands' },
+  { value: 'decoration', label: 'Interior Finishing' },
+  { value: 'luxury-fragrance', label: 'Perfumes' },
   { value: 'other', label: 'Other' },
 ]
 

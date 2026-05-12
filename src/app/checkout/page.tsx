@@ -27,11 +27,14 @@ const initialForm: CheckoutFormData = {
 }
 
 const serviceOptions = [
-  'Decoration',
-  'Furniture',
-  'Luxury Fragrance',
-  'Graphic Design',
-  'Real Estate',
+  'Furniture Order',
+  'Sofasets',
+  'Beds',
+  'Wardrobes',
+  'TV Stands',
+  'Centre Tables',
+  'Interior Finishing',
+  'Perfumes',
   'Other',
 ]
 

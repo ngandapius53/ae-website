@@ -87,20 +87,20 @@ export default function Footer() {
           </div>
 
           <div className={styles.column}>
-            <h4 className={styles.columnTitle}>Services</h4>
-            <Link href="/decoration" className={styles.link}>Stylish Decoration</Link>
-            <Link href="/furniture" className={styles.link}>Furniture</Link>
-            <Link href="/luxury-fragrance" className={styles.link}>Luxury Fragrance</Link>
-            <Link href="/graphic-design" className={styles.link}>Graphic Design</Link>
-            <Link href="/real-estate" className={styles.link}>Real Estate</Link>
+            <h4 className={styles.columnTitle}>Departments</h4>
+            <Link href="/furniture" className={styles.link}>Sofasets</Link>
+            <Link href="/furniture" className={styles.link}>Beds</Link>
+            <Link href="/furniture" className={styles.link}>Wardrobes</Link>
+            <Link href="/furniture" className={styles.link}>TV Stands</Link>
+            <Link href="/luxury-fragrance" className={styles.link}>Perfumes</Link>
           </div>
 
           <div className={styles.column}>
-            <h4 className={styles.columnTitle}>Quick Links</h4>
+            <h4 className={styles.columnTitle}>Workshop</h4>
             <Link href="/about" className={styles.link}>About Us</Link>
             <Link href="/contact" className={styles.link}>Contact</Link>
-            <Link href="/checkout" className={styles.link}>Checkout Info</Link>
-            <Link href="/contact" className={styles.link}>Get Quote</Link>
+            <Link href="/furniture" className={styles.link}>Latest Products</Link>
+            <Link href="/contact" className={styles.link}>Request Quote</Link>
           </div>
 
           <div className={styles.column}>

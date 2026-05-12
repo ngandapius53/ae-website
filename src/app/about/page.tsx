@@ -5,8 +5,8 @@ import { ArrowRight, Award, Globe, Heart, Users } from 'lucide-react'
 import styles from '@/app/about/page.module.css'
 
 export const metadata: Metadata = {
-  title: 'About Us - AE',
-  description: 'Learn more about AE and our mission to transform spaces.',
+  title: 'About ARAH Furniture Workshop',
+  description: 'Learn about ARAH Enterprises Furniture Workshop in Kampala Ntinda.',
 }
 
 const values = [
@@ -39,9 +39,9 @@ export default function AboutPage() {
         </div>
         <div className={styles.heroOverlay}></div>
         <div className={styles.heroContent}>
-          <h1 className={styles.heroTitle}>About AE</h1>
+          <h1 className={styles.heroTitle}>About ARAH Furniture Workshop</h1>
           <p className={styles.heroDescription}>
-            Transforming spaces and creating experiences since 2014.
+            Furniture, finishing, and home pieces made for everyday Ugandan living.
           </p>
         </div>
       </section>
@@ -50,15 +50,15 @@ export default function AboutPage() {
         <div className="container">
           <div className={styles.story}>
             <div className={styles.storyContent}>
-              <h2 className={styles.storyTitle}>Our Story</h2>
+              <h2 className={styles.storyTitle}>Our Workshop Story</h2>
               <p className={styles.storyText}>
-                Founded in 2014, AE began with a simple vision: to transform ordinary spaces into extraordinary experiences. What started as a small interior design studio has grown into a comprehensive creative agency offering decoration, furniture, graphic design, and real estate services.
+                ARAH Enterprises is built around practical furniture work, room finishing, and customer support for homes and businesses around Kampala. The workshop brings together sofasets, beds, wardrobes, TV stands, tables, storage, and interior ideas under one place.
               </p>
               <p className={styles.storyText}>
-                Our team of passionate designers, architects, and creative professionals work collaboratively to bring our clients&apos; visions to life. We believe that great design has the power to enhance quality of life, boost productivity, and create lasting impressions.
+                Customers can browse finished pieces, request custom work, ask for finishing guidance, and arrange details through the team. The goal is simple: clear communication, strong presentation, and furniture that fits real rooms.
               </p>
               <p className={styles.storyText}>
-                Today, AE is proud to be a trusted partner for homeowners, businesses, and investors seeking premium design and real estate solutions. Our commitment to excellence and client satisfaction remains at the heart of our mission.
+                The website now works like a furniture-shop catalog so clients can see departments, products, prices, and inquiry options quickly on phone or desktop.
               </p>
             </div>
             <div className={styles.storyImage}>
@@ -90,8 +90,8 @@ export default function AboutPage() {
       <section className="section">
         <div className="container">
           <div className="text-center">
-            <h2 className="section-title">Our Values</h2>
-            <p className="section-subtitle">The principles that guide everything we do</p>
+            <h2 className="section-title">Workshop Values</h2>
+            <p className="section-subtitle">The principles behind every furniture request</p>
           </div>
           <div className="grid grid-4">
             {values.map((value) => (
@@ -110,8 +110,8 @@ export default function AboutPage() {
       <section className={`section ${styles.cta}`}>
         <div className="container">
           <div className={styles.ctaContent}>
-            <h2 className={styles.ctaTitle}>Join Our Journey</h2>
-            <p>Let&apos;s create something beautiful together.</p>
+            <h2 className={styles.ctaTitle}>Ready To Furnish Your Space?</h2>
+            <p>Send your room idea, product request, or custom measurement.</p>
             <Link href="/contact" className="btn btn-primary">
               Get In Touch <ArrowRight size={20} />
             </Link>

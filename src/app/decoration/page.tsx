@@ -5,8 +5,8 @@ import { ArrowRight, Paintbrush, Home, Building, Palette } from 'lucide-react'
 import styles from '@/app/decoration/page.module.css'
 
 export const metadata: Metadata = {
-  title: 'Stylish Decoration - AE',
-  description: 'Transform your space with expert interior decoration services.',
+  title: 'Interior Finishing - ARAH Furniture Workshop',
+  description: 'Interior finishing, TV walls, ceiling work, and furniture-ready spaces by ARAH Furniture Workshop.',
 }
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
@@ -67,9 +67,9 @@ export default function DecorationPage() {
         </div>
         <div className={styles.heroOverlay}></div>
         <div className={styles.heroContent}>
-          <h1 className={styles.heroTitle}>Stylish Decoration</h1>
+          <h1 className={styles.heroTitle}>Interior Finishing</h1>
           <p className={styles.heroDescription}>
-            Transform your space into a beautiful, functional environment that reflects your unique style.
+            TV walls, ceilings, wall features, shelves, and room finishes made to match your furniture.
           </p>
         </div>
       </section>
@@ -77,11 +77,11 @@ export default function DecorationPage() {
       <section className="section">
         <div className="container">
           <div className={styles.intro}>
-            <h2 className="section-title">Design That Inspires</h2>
+            <h2 className="section-title">Finish The Room Around The Furniture</h2>
             <p className={styles.introText}>
-              Our interior decoration services blend aesthetics with functionality to create spaces
-              that not only look stunning but enhance your daily life. From concept to completion,
-              we work closely with you to understand your vision and bring it to reality.
+              Our workshop connects furniture with the room around it: ceiling details,
+              TV wall units, display shelves, kitchen finishing, and practical interiors
+              for homes, rentals, offices, and shops.
             </p>
           </div>
 
@@ -102,8 +102,8 @@ export default function DecorationPage() {
       <section className={`section ${styles.gallery}`}>
         <div className="container">
           <div className="text-center">
-            <h2 className="section-title">Our Projects</h2>
-            <p className="section-subtitle">Explore our recent decoration projects</p>
+            <h2 className="section-title">Workshop Interior Projects</h2>
+            <p className="section-subtitle">Room finishes, feature walls, and furniture-ready spaces</p>
           </div>
           <div className={styles.galleryGrid}>
             {projects.map((project, index) => (
@@ -128,8 +128,8 @@ export default function DecorationPage() {
       <section className={`section ${styles.cta}`}>
         <div className="container">
           <div className={styles.ctaContent}>
-            <h2 className={styles.ctaTitle}>Ready to Transform Your Space?</h2>
-            <p>Let&apos;s create something beautiful together.</p>
+            <h2 className={styles.ctaTitle}>Need Furniture And Finishing Together?</h2>
+            <p>Send the room size, photos, or idea and we will guide the next step.</p>
             <Link href="/contact" className="btn btn-primary">
               Get Started <ArrowRight size={20} />
             </Link>

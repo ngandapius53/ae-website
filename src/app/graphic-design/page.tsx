@@ -7,8 +7,8 @@ import styles from '@/app/graphic-design/page.module.css'
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 
 export const metadata: Metadata = {
-  title: 'Graphic Design - AE',
-  description: 'Creative graphic design services for your brand.',
+  title: 'Catalog & Branding - ARAH Furniture Workshop',
+  description: 'Furniture catalog, labels, posters, and brand design support from ARAH Furniture Workshop.',
 }
 
 const services = [
@@ -47,9 +47,9 @@ export default function GraphicDesignPage() {
         </div>
         <div className={styles.heroOverlay}></div>
         <div className={styles.heroContent}>
-          <h1 className={styles.heroTitle}>Graphic Design</h1>
+          <h1 className={styles.heroTitle}>Catalog & Branding</h1>
           <p className={styles.heroDescription}>
-            Elevate your brand with creative design solutions that make lasting impressions.
+            Posters, catalogs, labels, and business artwork for furniture, shops, products, and services.
           </p>
         </div>
       </section>
@@ -57,8 +57,8 @@ export default function GraphicDesignPage() {
       <section className="section">
         <div className="container">
           <div className="text-center">
-            <h2 className="section-title">Our Design Services</h2>
-            <p className="section-subtitle">Comprehensive creative solutions for every need</p>
+            <h2 className="section-title">Design Support For The Workshop</h2>
+            <p className="section-subtitle">Branding, posters, catalogs, and product presentation</p>
           </div>
           <div className="grid grid-2">
             {services.map((service) => (
@@ -79,8 +79,8 @@ export default function GraphicDesignPage() {
       <section className={`section ${styles.portfolio}`}>
         <div className="container">
           <div className="text-center">
-            <h2 className="section-title">Our Work</h2>
-            <p className="section-subtitle">Recent design projects</p>
+            <h2 className="section-title">Catalog & Artwork Samples</h2>
+            <p className="section-subtitle">Design work for product display and promotion</p>
           </div>
           <div className={styles.portfolioGrid}>
             {portfolio.map((item, index) => (
@@ -105,8 +105,8 @@ export default function GraphicDesignPage() {
       <section className={`section ${styles.cta}`}>
         <div className="container">
           <div className={styles.ctaContent}>
-            <h2 className={styles.ctaTitle}>Let&apos;s Create Something Amazing</h2>
-            <p>Share your vision and we&apos;ll bring it to life with stunning design.</p>
+            <h2 className={styles.ctaTitle}>Need A Poster, Catalog, Or Logo?</h2>
+            <p>Send your business name and idea and we will prepare the design direction.</p>
             <Link href="/contact" className="btn btn-primary">
               Start Your Project <ArrowRight size={20} />
             </Link>

@@ -8,8 +8,8 @@ import styles from '@/app/real-estate/page.module.css'
 import PropertyGallery from '@/app/real-estate/PropertyGallery'
 
 export const metadata: Metadata = {
-  title: 'Real Estate - AE',
-  description: 'Find your dream property with our comprehensive real estate services.',
+  title: 'Homes & Property Support - ARAH Furniture Workshop',
+  description: 'Homes, property support, and move-in furnishing guidance from ARAH Furniture Workshop.',
 }
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
@@ -124,9 +124,9 @@ export default async function RealEstatePage() {
         </div>
         <div className={styles.heroOverlay}></div>
         <div className={styles.heroContent}>
-          <h1 className={styles.heroTitle}>Real Estate</h1>
+          <h1 className={styles.heroTitle}>Homes & Property Support</h1>
           <p className={styles.heroDescription}>
-            Find your dream property with expert guidance from our experienced real estate team.
+            Property support for customers planning homes, rentals, interiors, and furniture move-ins.
           </p>
         </div>
       </section>
@@ -134,8 +134,8 @@ export default async function RealEstatePage() {
       <section className="section">
         <div className="container">
           <div className="text-center">
-            <h2 className="section-title">Our Real Estate Services</h2>
-            <p className="section-subtitle">Comprehensive property solutions</p>
+            <h2 className="section-title">Home Support Services</h2>
+            <p className="section-subtitle">Property search, viewing, listing, and move-in furnishing guidance</p>
           </div>
           <div className="grid grid-4">
             {services.map((service) => (
@@ -154,8 +154,8 @@ export default async function RealEstatePage() {
       <section className={`section ${styles.listings}`}>
         <div className="container">
           <div className="text-center">
-            <h2 className="section-title">Featured Properties</h2>
-            <p className="section-subtitle">Recent property photos and inspiration</p>
+            <h2 className="section-title">Homes And Move-In Ideas</h2>
+            <p className="section-subtitle">Property photos and home inspiration for furniture planning</p>
           </div>
           <div className={styles.packageGrid}>
             {propertyPackages.map((item) => (
