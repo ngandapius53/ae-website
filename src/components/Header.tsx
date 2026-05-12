@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
 import { Menu, Search, ShoppingBag, X } from 'lucide-react'
 import styles from '@/components/Header.module.css'
@@ -83,8 +84,18 @@ export default function Header() {
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
-          <span className={styles.logoPrimary}>ARAH</span>
-          <span className={styles.logoAccent}>ENTERPRISES</span>
+          <Image
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/arah-furniture-workshop-logo.jpeg`}
+            alt="ARAH Enterprises Furniture Workshop"
+            width={56}
+            height={56}
+            className={styles.logoImage}
+            priority
+          />
+          <span className={styles.logoText}>
+            <span className={styles.logoPrimary}>ARAH</span>
+            <span className={styles.logoAccent}>Furniture Workshop</span>
+          </span>
         </Link>
 
         <div className={styles.utilityBar}>

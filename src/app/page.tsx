@@ -121,20 +121,79 @@ const featuredOffers = [
   }
 ]
 
+const bestSellingOffers = [
+  {
+    title: '6 Seater Wood Dining Table',
+    category: 'Dining Tables',
+    price: '2,800,000 UGX',
+    oldPrice: '3,000,000 UGX',
+    discount: '-7%',
+    image: '/furniture/work/fluted-sideboard-ivory-set.jpeg',
+    link: '/furniture'
+  },
+  {
+    title: 'The Verdant Sofa Set',
+    category: 'Sofasets',
+    price: '7,500,000 UGX',
+    oldPrice: '8,110,000 UGX',
+    discount: '-8%',
+    image: '/furniture/work/sectional-sofa-teal.jpeg',
+    link: '/furniture'
+  },
+  {
+    title: '5 by 6 Twist Bed',
+    category: 'Beds',
+    price: '1,800,000 UGX',
+    oldPrice: '2,000,000 UGX',
+    discount: '-10%',
+    image: '/furniture/work/bedframe-white-panel.jpeg',
+    link: '/furniture'
+  },
+  {
+    title: 'Sofa Bed L-Shape',
+    category: 'Sofasets',
+    price: '1,800,000 UGX',
+    oldPrice: '2,000,000 UGX',
+    discount: '-10%',
+    image: '/furniture/quick/sectional-leather-with-table.jpeg',
+    link: '/furniture'
+  },
+  {
+    title: 'Marble Centre Piece',
+    category: 'Centre Tables',
+    price: '2,500,000 UGX',
+    oldPrice: '2,800,000 UGX',
+    discount: '-11%',
+    image: '/furniture/work/coffee-table-fluted-black.jpeg',
+    link: '/furniture'
+  },
+  {
+    title: 'Open Luxury Wardrobe',
+    category: 'Wardrobes',
+    price: '1,800,000 UGX',
+    oldPrice: '2,000,000 UGX',
+    discount: '-10%',
+    image: '/furniture/work/wardrobe-walnut-classic.jpeg',
+    link: '/furniture'
+  }
+]
+
 const shopCategories = [
-  { name: 'Sofasets', count: 84, href: '/furniture' },
-  { name: 'Beds', count: 78, href: '/furniture' },
-  { name: 'Perfumes', count: 23, href: '/luxury-fragrance' },
-  { name: 'Dining Tables', count: 48, href: '/furniture' },
-  { name: 'TV Stands', count: 27, href: '/furniture' },
-  { name: 'Wardrobes', count: 24, href: '/furniture' },
-  { name: 'Centre Tables', count: 21, href: '/furniture' },
-  { name: 'Cupboards', count: 16, href: '/furniture' },
-  { name: 'Shoe Racks', count: 10, href: '/furniture' }
+  { name: 'Best Sellers', count: 12, href: '/furniture', image: '/furniture/work/chesterfield-sofa-teal.jpeg' },
+  { name: 'New Arrivals', count: 18, href: '/furniture', image: '/furniture/work/tv-console-classic-white.jpeg' },
+  { name: 'Sofasets', count: 84, href: '/furniture', image: '/furniture/work/sectional-sofa-teal.jpeg' },
+  { name: 'Beds', count: 78, href: '/furniture', image: '/furniture/work/bedframe-upholstered-gray.jpeg' },
+  { name: 'Centre Tables', count: 21, href: '/furniture', image: '/furniture/work/coffee-table-fluted-black.jpeg' },
+  { name: 'Dining Tables', count: 48, href: '/furniture', image: '/furniture/work/fluted-sideboard-ivory-set.jpeg' },
+  { name: 'TV Stands', count: 27, href: '/furniture', image: '/furniture/work/tv-console-classic-white.jpeg' },
+  { name: 'Wardrobes', count: 24, href: '/furniture', image: '/furniture/quick/wardrobe-matte-black-clean.jpeg' },
+  { name: 'Cupboards', count: 16, href: '/furniture', image: '/furniture/work/display-cabinet-charcoal-oak.jpeg' },
+  { name: 'Shoe Racks', count: 10, href: '/furniture', image: '/furniture/work/rolling-gas-cart-natural-wood.jpeg' },
+  { name: 'Perfumes', count: 23, href: '/luxury-fragrance', image: '/luxury-fragrance/lf-13.jpeg' }
 ]
 
 export default function Home() {
-  const [selectedProduct, setSelectedProduct] = useState<(typeof featuredOffers)[number] | null>(null)
+  const [selectedProduct, setSelectedProduct] = useState<(typeof featuredOffers)[number] | (typeof bestSellingOffers)[number] | null>(null)
 
   return (
     <>
@@ -163,7 +222,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            The No. 1 ARAH Furniture Store
+            The No. 1 ARAH Furniture Workshop
           </motion.span>
           <motion.h1 
             className={styles.heroTitle}
@@ -171,7 +230,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            Furniture, interiors and home pieces delivered in Uganda.
+            Introducing ARAH Enterprises Furniture Workshop.
           </motion.h1>
           <motion.p 
             className={styles.heroDescription}
@@ -179,7 +238,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
           >
-            Shop sofasets, beds, TV stands, wardrobes, dining sets, decoration, fragrance and custom interior services from Kampala Ntinda.
+            Shop wardrobes, beds, sofasets, TV stands, centre tables, dining sets and custom workshop pieces made for real Ugandan homes.
           </motion.p>
           <motion.div 
             className={styles.heroButtons}
@@ -245,6 +304,63 @@ export default function Home() {
               </button>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className={styles.categoryShowcase}>
+        <div className={styles.sectionHeaderRow}>
+          <div>
+            <span>Featured Categories</span>
+            <h2>Visit our shop to see amazing creations from our designers.</h2>
+          </div>
+          <Link href="/furniture">More Categories <ArrowRight size={16} /></Link>
+        </div>
+        <div className={styles.categoryGrid}>
+          {shopCategories.slice(2).map((category) => (
+            <Link href={category.href} key={category.name} className={styles.categoryCard}>
+              <div className={styles.categoryImage}>
+                <Image src={`${basePath}${category.image}`} alt={category.name} fill sizes="(max-width: 768px) 50vw, 20vw" />
+              </div>
+              <h3>{category.name}</h3>
+              <p>{category.count} Items</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.shopSection}>
+        <div className={styles.shopToolbar}>
+          <div>
+            <span>Customer Favorites</span>
+            <h2>Best Selling Products</h2>
+            <p>Popular workshop pieces inspired by real furniture requests.</p>
+          </div>
+          <Link href="/furniture">More Furniture <ArrowRight size={16} /></Link>
+        </div>
+        <div className={styles.shopGrid}>
+          {bestSellingOffers.map((offer) => (
+            <button
+              type="button"
+              className={styles.shopCard}
+              key={offer.title}
+              onClick={() => setSelectedProduct(offer)}
+              aria-label={`Open ${offer.title}`}
+            >
+              <div className={styles.saleBadge}>{offer.discount}</div>
+              <div className={styles.shopActions}>
+                <span><Heart size={14} /> Wishlist</span>
+                <span>Compare</span>
+              </div>
+              <div className={styles.shopImage}>
+                <Image src={`${basePath}${offer.image}`} alt={offer.title} fill sizes="(max-width: 768px) 50vw, 33vw" />
+              </div>
+              <div className={styles.shopInfo}>
+                <small>{offer.category}</small>
+                <h3>{offer.title}</h3>
+                <p><del>{offer.oldPrice}</del> <strong>{offer.price}</strong></p>
+              </div>
+            </button>
+          ))}
         </div>
       </section>
 

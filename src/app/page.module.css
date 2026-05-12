@@ -172,6 +172,18 @@
   background: #ffffff;
 }
 
+.shopSection,
+.categoryShowcase {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 46px 20px;
+  background: #ffffff;
+}
+
+.categoryShowcase {
+  padding-top: 20px;
+}
+
 .categoryPanel {
   align-self: start;
   border: 1px solid #e6e2da;
@@ -198,6 +210,54 @@
 .categoryLink small {
   color: #777;
   white-space: nowrap;
+}
+
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.categoryCard {
+  border: 1px solid #e9e3da;
+  background: #ffffff;
+  color: #1a1a2e;
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.categoryCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(26, 26, 46, 0.11);
+}
+
+.categoryImage {
+  position: relative;
+  aspect-ratio: 1.18;
+  background: #f6f1e9;
+  overflow: hidden;
+}
+
+.categoryImage :global(img) {
+  object-fit: cover;
+  transition: transform 0.24s ease;
+}
+
+.categoryCard:hover .categoryImage img {
+  transform: scale(1.05);
+}
+
+.categoryCard h3 {
+  padding: 14px 14px 4px;
+  color: #1a1a2e;
+  font-size: 17px;
+}
+
+.categoryCard p {
+  padding: 0 14px 16px;
+  color: #6c757d;
+  font-size: 13px;
+  font-weight: 700;
 }
 
 .shopToolbar {
@@ -528,6 +588,11 @@
     padding: 28px 14px 38px;
   }
 
+  .shopSection,
+  .categoryShowcase {
+    padding: 28px 14px;
+  }
+
   .categoryPanel {
     margin-bottom: 28px;
   }
@@ -544,6 +609,19 @@
   .shopGrid {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
+  }
+
+  .categoryGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .categoryCard h3 {
+    font-size: 14px;
+  }
+
+  .categoryCard p {
+    font-size: 11px;
   }
 
   .shopActions {
