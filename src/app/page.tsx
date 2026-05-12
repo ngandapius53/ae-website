@@ -216,6 +216,21 @@ export default function Home() {
         </div>
         <div className={styles.heroOverlay}></div>
         <div className={styles.heroContent}>
+          <motion.div
+            className={styles.heroLogoWrap}
+            initial={{ opacity: 0, scale: 0.92, y: 18 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+          >
+            <Image
+              src={`${basePath}/arah-furniture-workshop-logo.jpeg`}
+              alt="ARAH Enterprises Furniture Workshop logo"
+              width={220}
+              height={220}
+              className={styles.heroLogo}
+              priority
+            />
+          </motion.div>
           <motion.span 
             className={styles.heroTag}
             initial={{ opacity: 0, y: 20 }}
