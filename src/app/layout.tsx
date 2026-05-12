@@ -3,10 +3,11 @@ import '@/styles/globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import SocialDock from '@/components/SocialDock'
+import WorkshopStrip from '@/components/WorkshopStrip'
 
 export const metadata: Metadata = {
-  title: 'AE - Decoration, Furniture, Luxury Fragrance, Graphic Design & Real Estate',
-  description: 'Premium design and real estate services. Stylish decoration, furniture, luxury fragrance, graphic design, and real estate solutions.',
+  title: 'ARAH Enterprises Furniture Workshop',
+  description: 'ARAH Enterprises Furniture Workshop in Kampala Ntinda for sofasets, beds, wardrobes, TV stands, decoration, fragrance, graphic design, and real estate support.',
 }
 
 export default function RootLayout({
@@ -18,6 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header />
+        <WorkshopStrip />
         <main>{children}</main>
         <SocialDock />
         <Footer />

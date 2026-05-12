@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --primary: #1a1a2e;
-  --secondary: #16213e;
+  --primary: #24170f;
+  --secondary: #332317;
   --accent: #e94560;
-  --accent-secondary: #0f3460;
-  --light: #f8f9fa;
-  --text-primary: #1a1a2e;
+  --accent-secondary: #c99451;
+  --light: #f7f2ea;
+  --text-primary: #24170f;
   --text-light: #ffffff;
   --text-muted: #6c757d;
   
@@ -75,7 +75,7 @@ img {
   align-items: center;
   gap: 8px;
   padding: 14px 32px;
-  border-radius: 50px;
+  border-radius: 0;
   font-family: var(--font-body);
   font-weight: 500;
   font-size: 16px;
@@ -172,7 +172,7 @@ button:active,
 
 .card {
   background: white;
-  border-radius: 20px;
+  border-radius: 0;
   padding: 40px;
   box-shadow: var(--shadow);
   transition: var(--transition);

@@ -1,8 +1,11 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Facebook, Instagram, Mail, Phone, MapPin } from 'lucide-react'
 import styles from '@/components/Footer.module.css'
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 
 function XLogoIcon({ size = 20 }: { size?: number }) {
   return (
@@ -27,10 +30,19 @@ export default function Footer() {
       <div className={styles.container}>
         <div className={styles.grid}>
           <div className={styles.column}>
-            <h3 className={styles.logo}>ARAH ENTERPRISES</h3>
+            <div className={styles.footerBrand}>
+              <Image
+                src={`${basePath}/arah-furniture-workshop-logo.jpeg`}
+                alt="ARAH Enterprises Furniture Workshop"
+                width={76}
+                height={76}
+                className={styles.footerLogo}
+              />
+              <h3 className={styles.logo}>ARAH ENTERPRISES</h3>
+            </div>
             <p className={styles.description}>
-              Your premier destination for stylish decoration, premium furniture,
-              luxury fragrance, creative graphic design, and real estate solutions.
+              A furniture workshop storefront for sofasets, beds, wardrobes,
+              TV stands, centre tables, decoration, fragrance, design, and property support.
             </p>
             <div className={styles.social}>
               <a
