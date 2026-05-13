@@ -5,8 +5,8 @@ import { ArrowRight, Paintbrush, Home, Building, Palette } from 'lucide-react'
 import styles from '@/app/decoration/page.module.css'
 
 export const metadata: Metadata = {
-  title: 'Interior Finishing - ARAH Furniture Workshop',
-  description: 'Interior finishing, TV walls, ceiling work, and furniture-ready spaces by ARAH Furniture Workshop.',
+  title: 'Decoration - ARAH Furniture Workshop',
+  description: 'Decoration, TV walls, ceiling work, and furniture-ready spaces by ARAH Furniture Workshop.',
 }
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
@@ -67,7 +67,7 @@ export default function DecorationPage() {
         </div>
         <div className={styles.heroOverlay}></div>
         <div className={styles.heroContent}>
-          <h1 className={styles.heroTitle}>Interior Finishing</h1>
+          <h1 className={styles.heroTitle}>Decoration</h1>
           <p className={styles.heroDescription}>
             TV walls, ceilings, wall features, shelves, and room finishes made to match your furniture.
           </p>

@@ -11,7 +11,7 @@ const serviceOptions = [
   { value: 'beds', label: 'Beds' },
   { value: 'wardrobes', label: 'Wardrobes' },
   { value: 'tv-stands', label: 'TV Stands' },
-  { value: 'decoration', label: 'Interior Finishing' },
+  { value: 'decoration', label: 'Decoration' },
   { value: 'luxury-fragrance', label: 'Perfumes' },
   { value: 'real-estate', label: 'Real Estate' },
   { value: 'other', label: 'Other' },

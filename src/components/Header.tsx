@@ -10,6 +10,7 @@ import styles from '@/components/Header.module.css'
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/furniture', label: 'Shop Furniture' },
+  { href: '/decoration', label: 'Decoration' },
   { href: '/furniture', label: 'Sofasets' },
   { href: '/furniture', label: 'Beds' },
   { href: '/furniture', label: 'Wardrobes' },

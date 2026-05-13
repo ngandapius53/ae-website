@@ -33,7 +33,7 @@ const serviceOptions = [
   'Wardrobes',
   'TV Stands',
   'Centre Tables',
-  'Interior Finishing',
+  'Decoration',
   'Perfumes',
   'Real Estate',
   'Other',
