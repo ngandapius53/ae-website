@@ -223,8 +223,8 @@ export default function Home() {
             transition={{ delay: 0.1 }}
           >
             <Image
-              src={`${basePath}/arah-furniture-workshop-logo.jpeg`}
-              alt="ARAH Enterprises Furniture Workshop logo"
+              src={`${basePath}/arah-enterprises-logo.jpeg`}
+              alt="Arah Enterprises logo"
               width={220}
               height={220}
               className={styles.heroLogo}

@@ -88,8 +88,8 @@ export default function Header() {
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
           <Image
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/arah-furniture-workshop-logo.jpeg`}
-            alt="ARAH Enterprises Furniture Workshop"
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/arah-enterprises-logo.jpeg`}
+            alt="Arah Enterprises logo"
             width={56}
             height={56}
             className={styles.logoImage}

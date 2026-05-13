@@ -13,8 +13,8 @@ export default function WorkshopStrip() {
       <div className={styles.inner}>
         <Link href="/" className={styles.brand}>
           <Image
-            src={`${basePath}/arah-furniture-workshop-logo.jpeg`}
-            alt="ARAH Enterprises Furniture Workshop"
+            src={`${basePath}/arah-enterprises-logo.jpeg`}
+            alt="Arah Enterprises logo"
             width={72}
             height={72}
             className={styles.logo}

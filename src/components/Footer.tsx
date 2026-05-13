@@ -32,8 +32,8 @@ export default function Footer() {
           <div className={styles.column}>
             <div className={styles.footerBrand}>
               <Image
-                src={`${basePath}/arah-furniture-workshop-logo.jpeg`}
-                alt="ARAH Enterprises Furniture Workshop"
+                src={`${basePath}/arah-enterprises-logo.jpeg`}
+                alt="Arah Enterprises logo"
                 width={76}
                 height={76}
                 className={styles.footerLogo}
