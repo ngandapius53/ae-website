@@ -45,8 +45,8 @@ body::before {
   background-image: url('/ae-website/arah-workshop-watermark.jpeg');
   background-repeat: repeat;
   background-position: center;
-  background-size: clamp(220px, 28vw, 420px);
-  opacity: 0.22;
+  background-size: clamp(280px, 34vw, 520px);
+  opacity: 0.14;
   mix-blend-mode: multiply;
 }
 
