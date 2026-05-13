@@ -13,6 +13,7 @@ const serviceOptions = [
   { value: 'tv-stands', label: 'TV Stands' },
   { value: 'decoration', label: 'Interior Finishing' },
   { value: 'luxury-fragrance', label: 'Perfumes' },
+  { value: 'real-estate', label: 'Real Estate' },
   { value: 'other', label: 'Other' },
 ]
 

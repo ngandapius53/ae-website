@@ -93,6 +93,7 @@ export default function Footer() {
             <Link href="/furniture" className={styles.link}>Wardrobes</Link>
             <Link href="/furniture" className={styles.link}>TV Stands</Link>
             <Link href="/luxury-fragrance" className={styles.link}>Perfumes</Link>
+            <Link href="/real-estate" className={styles.link}>Real Estate</Link>
           </div>
 
           <div className={styles.column}>
@@ -100,6 +101,7 @@ export default function Footer() {
             <Link href="/about" className={styles.link}>About Us</Link>
             <Link href="/contact" className={styles.link}>Contact</Link>
             <Link href="/furniture" className={styles.link}>Latest Products</Link>
+            <Link href="/real-estate" className={styles.link}>Property Support</Link>
             <Link href="/contact" className={styles.link}>Request Quote</Link>
           </div>
 

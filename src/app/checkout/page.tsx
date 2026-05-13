@@ -35,6 +35,7 @@ const serviceOptions = [
   'Centre Tables',
   'Interior Finishing',
   'Perfumes',
+  'Real Estate',
   'Other',
 ]
 

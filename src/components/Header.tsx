@@ -15,6 +15,7 @@ const navLinks = [
   { href: '/furniture', label: 'Wardrobes' },
   { href: '/furniture', label: 'TV Stands' },
   { href: '/luxury-fragrance', label: 'Perfumes' },
+  { href: '/real-estate', label: 'Real Estate' },
   { href: '/contact', label: 'Contact' },
   { href: '/about', label: 'About', isButton: true },
 ]
