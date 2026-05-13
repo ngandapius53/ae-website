@@ -40,28 +40,26 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
-  z-index: 1;
+  z-index: 950;
   pointer-events: none;
   background-image: url('/ae-website/arah-workshop-watermark.jpeg');
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: center;
-  background-size: min(90vw, 1040px);
-  opacity: 0.38;
+  background-size: clamp(220px, 28vw, 420px);
+  opacity: 0.22;
   mix-blend-mode: multiply;
 }
 
 main {
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 header,
-footer,
-section,
 nav,
-aside {
+footer {
   position: relative;
-  z-index: 2;
+  z-index: 1000;
 }
 
 h1, h2, h3, h4, h5, h6 {
