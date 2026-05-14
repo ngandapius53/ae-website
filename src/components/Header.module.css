@@ -78,8 +78,8 @@
   gap: 8px;
   margin: 0 4px;
   flex: 1;
-  max-width: 76px;
-  min-width: 68px;
+  max-width: 92px;
+  min-width: 78px;
 }
 
 .search {
@@ -335,8 +335,8 @@
   }
 
   .utilityBar {
-    max-width: 70px;
-    min-width: 62px;
+    max-width: 84px;
+    min-width: 72px;
     margin: 0 4px 0 0;
   }
 
