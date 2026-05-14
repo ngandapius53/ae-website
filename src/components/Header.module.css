@@ -78,18 +78,18 @@
   gap: 8px;
   margin: 0 4px;
   flex: 1;
-  max-width: 108px;
-  min-width: 88px;
+  max-width: 76px;
+  min-width: 68px;
 }
 
 .search {
   flex: 1;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
   background: rgba(255, 255, 255, 0.96);
   border: 1px solid rgba(233, 69, 96, 0.85);
-  padding: 2px 4px 2px 6px;
+  padding: 2px 3px 2px 5px;
   border-radius: 999px;
   color: #1a1a2e;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
@@ -125,7 +125,7 @@
   border-radius: 999px;
   font-size: 10px;
   font-weight: 600;
-  padding: 3px 6px;
+  padding: 3px 5px;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
@@ -335,13 +335,13 @@
   }
 
   .utilityBar {
-    max-width: 96px;
-    min-width: 78px;
+    max-width: 70px;
+    min-width: 62px;
     margin: 0 4px 0 0;
   }
 
   .search {
-    padding: 2px 4px 2px 6px;
+    padding: 2px 3px 2px 5px;
   }
 
   .nav {
