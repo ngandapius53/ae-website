@@ -78,26 +78,26 @@
   gap: 8px;
   margin: 0 4px;
   flex: 1;
-  max-width: 150px;
-  min-width: 118px;
+  max-width: 108px;
+  min-width: 88px;
 }
 
 .search {
   flex: 1;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   background: rgba(255, 255, 255, 0.96);
   border: 1px solid rgba(233, 69, 96, 0.85);
-  padding: 3px 5px 3px 8px;
+  padding: 2px 4px 2px 6px;
   border-radius: 999px;
   color: #1a1a2e;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
 }
 
 .search svg {
-  width: 12px;
-  height: 12px;
+  width: 11px;
+  height: 11px;
   flex-shrink: 0;
   color: #e94560;
 }
@@ -108,14 +108,14 @@
   border: none;
   outline: none;
   color: #1a1a2e;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 500;
   min-width: 0;
 }
 
 .searchInput::placeholder {
   color: rgba(26, 26, 46, 0.62);
-  font-size: 11px;
+  font-size: 10px;
 }
 
 .searchSubmit {
@@ -123,9 +123,9 @@
   background: #e94560;
   color: #ffffff;
   border-radius: 999px;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
-  padding: 4px 8px;
+  padding: 3px 6px;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
@@ -335,13 +335,13 @@
   }
 
   .utilityBar {
-    max-width: 132px;
-    min-width: 104px;
+    max-width: 96px;
+    min-width: 78px;
     margin: 0 4px 0 0;
   }
 
   .search {
-    padding: 3px 5px 3px 7px;
+    padding: 2px 4px 2px 6px;
   }
 
   .nav {
@@ -437,20 +437,20 @@
 
   .search {
     width: 100%;
-    padding: 5px 7px 5px 10px;
+    padding: 4px 6px 4px 8px;
     border-color: #e94560;
   }
 
   .searchInput,
   .searchInput::placeholder {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .searchSubmit {
     display: inline-flex;
     align-items: center;
-    min-height: 28px;
-    padding: 5px 10px;
+    min-height: 26px;
+    padding: 4px 8px;
   }
 }
 
@@ -544,13 +544,13 @@
   }
 
   .search {
-    min-height: 36px;
+    min-height: 32px;
     border-width: 2px;
     background: #ffffff;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
   }
 
   .searchSubmit {
-    min-width: 44px;
+    min-width: 38px;
   }
 }
