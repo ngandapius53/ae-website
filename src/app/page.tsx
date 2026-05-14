@@ -64,7 +64,17 @@ const features = [
   { number: '50+', label: 'Awards Won' }
 ]
 
-const featuredOffers = [
+type ProductOffer = {
+  title: string
+  category: string
+  price: string
+  oldPrice: string
+  discount: string
+  image: string
+  link: string
+}
+
+const featuredOffers: ProductOffer[] = [
   {
     title: 'L-Shaped Sofa Set',
     category: 'Sofasets',
@@ -121,7 +131,121 @@ const featuredOffers = [
   }
 ]
 
-const bestSellingOffers = [
+const topOffers: ProductOffer[] = [
+  {
+    title: 'Classic White 3-Door Wardrobe',
+    category: 'Wardrobes',
+    price: '1,800,000 UGX',
+    oldPrice: '2,000,000 UGX',
+    discount: '-10%',
+    image: '/furniture/work/wardrobe-vanity-white-orange.jpeg',
+    link: '/furniture'
+  },
+  {
+    title: 'Solid Wood TV Stand',
+    category: 'TV Stands',
+    price: '1,500,000 UGX',
+    oldPrice: '1,800,000 UGX',
+    discount: '-17%',
+    image: '/furniture/work/media-console-oak-white.jpeg',
+    link: '/furniture'
+  },
+  {
+    title: 'Round Coffee Table',
+    category: 'Centre Tables',
+    price: '850,000 UGX',
+    oldPrice: '1,000,000 UGX',
+    discount: '-15%',
+    image: '/furniture/work/fluted-tv-stand-white-gold.jpeg',
+    link: '/furniture'
+  },
+  {
+    title: 'White Panel Bed',
+    category: 'Beds',
+    price: '1,800,000 UGX',
+    oldPrice: '2,000,000 UGX',
+    discount: '-10%',
+    image: '/furniture/quick/bedframe-white-set.jpeg',
+    link: '/furniture'
+  },
+  {
+    title: 'Open Shoe Rack Organizer',
+    category: 'Shoe Racks',
+    price: '750,000 UGX',
+    oldPrice: '850,000 UGX',
+    discount: '-12%',
+    image: '/furniture/quick/shoe-rack-white.jpeg',
+    link: '/furniture'
+  },
+  {
+    title: 'Compact Kitchen Hutch',
+    category: 'Kitchens',
+    price: '1,200,000 UGX',
+    oldPrice: '1,500,000 UGX',
+    discount: '-20%',
+    image: '/furniture/work/kitchen-hutch-gray-white.jpeg',
+    link: '/furniture'
+  }
+]
+
+const newArrivalOffers: ProductOffer[] = [
+  {
+    title: 'Teal Sectional Sofa',
+    category: 'Sofasets',
+    price: '4,300,000 UGX',
+    oldPrice: '4,850,000 UGX',
+    discount: '-12%',
+    image: '/furniture/work/sectional-sofa-teal.jpeg',
+    link: '/furniture'
+  },
+  {
+    title: 'Charcoal Display Cabinet',
+    category: 'Cupboards',
+    price: '1,800,000 UGX',
+    oldPrice: '2,000,000 UGX',
+    discount: '-10%',
+    image: '/furniture/work/display-cabinet-charcoal-oak.jpeg',
+    link: '/furniture'
+  },
+  {
+    title: 'Sky Blue Lounge Set',
+    category: 'Sofasets',
+    price: '3,800,000 UGX',
+    oldPrice: '4,000,000 UGX',
+    discount: '-5%',
+    image: '/furniture/work/lounge-set-sky-blue.jpeg',
+    link: '/furniture'
+  },
+  {
+    title: 'Dressing Table Espresso',
+    category: 'Dressing Mirrors',
+    price: '900,000 UGX',
+    oldPrice: '1,100,000 UGX',
+    discount: '-18%',
+    image: '/furniture/work/dressing-table-espresso.jpeg',
+    link: '/furniture'
+  },
+  {
+    title: 'Mid-Century Oak TV Stand',
+    category: 'TV Stands',
+    price: '650,000 UGX',
+    oldPrice: '750,000 UGX',
+    discount: '-13%',
+    image: '/furniture/work/tv-stand-midcentury-oak.jpeg',
+    link: '/furniture'
+  },
+  {
+    title: 'Black Orange Kitchen Unit',
+    category: 'Kitchens',
+    price: '1,500,000 UGX',
+    oldPrice: '1,800,000 UGX',
+    discount: '-17%',
+    image: '/furniture/work/kitchen-unit-compact-black-orange.jpeg',
+    link: '/furniture'
+  }
+]
+
+const bestSellingOffers: ProductOffer[] = [
   {
     title: '6 Seater Wood Dining Table',
     category: 'Dining Tables',
@@ -180,20 +304,27 @@ const bestSellingOffers = [
 
 const shopCategories = [
   { name: 'Best Sellers', count: 12, href: '/furniture', image: '/furniture/work/chesterfield-sofa-teal.jpeg' },
+  { name: 'Top 100 Offers', count: 100, href: '/furniture', image: '/furniture/work/coffee-table-fluted-black.jpeg' },
   { name: 'New Arrivals', count: 18, href: '/furniture', image: '/furniture/work/tv-console-classic-white.jpeg' },
+  { name: 'Boutique Shops', count: 6, href: '/furniture', image: '/furniture/work/display-cabinet-charcoal-oak.jpeg' },
   { name: 'Sofasets', count: 84, href: '/furniture', image: '/furniture/work/sectional-sofa-teal.jpeg' },
   { name: 'Beds', count: 78, href: '/furniture', image: '/furniture/work/bedframe-upholstered-gray.jpeg' },
+  { name: 'Chairs', count: 13, href: '/furniture', image: '/furniture/work/chesterfield-sofa-teal.jpeg' },
+  { name: 'Dressing Mirrors', count: 17, href: '/furniture', image: '/furniture/work/dresser-mirror-midnight.jpeg' },
+  { name: 'Home Shelf Storages', count: 4, href: '/furniture', image: '/furniture/quick/wall-shelves-display-white.jpeg' },
   { name: 'Centre Tables', count: 21, href: '/furniture', image: '/furniture/work/coffee-table-fluted-black.jpeg' },
   { name: 'Dining Tables', count: 48, href: '/furniture', image: '/furniture/work/fluted-sideboard-ivory-set.jpeg' },
   { name: 'TV Stands', count: 27, href: '/furniture', image: '/furniture/work/tv-console-classic-white.jpeg' },
   { name: 'Wardrobes', count: 24, href: '/furniture', image: '/furniture/quick/wardrobe-matte-black-clean.jpeg' },
   { name: 'Cupboards', count: 16, href: '/furniture', image: '/furniture/work/display-cabinet-charcoal-oak.jpeg' },
   { name: 'Shoe Racks', count: 10, href: '/furniture', image: '/furniture/work/rolling-gas-cart-natural-wood.jpeg' },
+  { name: 'Office Furniture', count: 9, href: '/furniture', image: '/furniture/work/dressing-table-espresso.jpeg' },
+  { name: 'Kitchens', count: 5, href: '/furniture', image: '/furniture/work/kitchen-hutch-gray-white.jpeg' },
   { name: 'Perfumes', count: 23, href: '/luxury-fragrance', image: '/luxury-fragrance/lf-13.jpeg' }
 ]
 
 export default function Home() {
-  const [selectedProduct, setSelectedProduct] = useState<(typeof featuredOffers)[number] | (typeof bestSellingOffers)[number] | null>(null)
+  const [selectedProduct, setSelectedProduct] = useState<ProductOffer | null>(null)
 
   return (
     <>
@@ -339,6 +470,78 @@ export default function Home() {
               <h3>{category.name}</h3>
               <p>{category.count} Items</p>
             </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.shopSection}>
+        <div className={styles.shopToolbar}>
+          <div>
+            <span>Top 100 Offers</span>
+            <h2>Workshop Deals</h2>
+            <p>Discounted pieces and high-demand furniture requests.</p>
+          </div>
+          <Link href="/furniture">More Offers <ArrowRight size={16} /></Link>
+        </div>
+        <div className={styles.shopGrid}>
+          {topOffers.map((offer) => (
+            <button
+              type="button"
+              className={styles.shopCard}
+              key={offer.title}
+              onClick={() => setSelectedProduct(offer)}
+              aria-label={`Open ${offer.title}`}
+            >
+              <div className={styles.saleBadge}>{offer.discount}</div>
+              <div className={styles.shopActions}>
+                <span><Heart size={14} /> Wishlist</span>
+                <span>Compare</span>
+              </div>
+              <div className={styles.shopImage}>
+                <Image src={`${basePath}${offer.image}`} alt={offer.title} fill sizes="(max-width: 768px) 50vw, 33vw" />
+              </div>
+              <div className={styles.shopInfo}>
+                <small>{offer.category}</small>
+                <h3>{offer.title}</h3>
+                <p><del>{offer.oldPrice}</del> <strong>{offer.price}</strong></p>
+              </div>
+            </button>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.shopSection}>
+        <div className={styles.shopToolbar}>
+          <div>
+            <span>New Arrivals</span>
+            <h2>Fresh From The Workshop</h2>
+            <p>Recent furniture looks and new showroom-style pieces.</p>
+          </div>
+          <Link href="/furniture">View Arrivals <ArrowRight size={16} /></Link>
+        </div>
+        <div className={styles.shopGrid}>
+          {newArrivalOffers.map((offer) => (
+            <button
+              type="button"
+              className={styles.shopCard}
+              key={offer.title}
+              onClick={() => setSelectedProduct(offer)}
+              aria-label={`Open ${offer.title}`}
+            >
+              <div className={styles.saleBadge}>{offer.discount}</div>
+              <div className={styles.shopActions}>
+                <span><Heart size={14} /> Wishlist</span>
+                <span>Compare</span>
+              </div>
+              <div className={styles.shopImage}>
+                <Image src={`${basePath}${offer.image}`} alt={offer.title} fill sizes="(max-width: 768px) 50vw, 33vw" />
+              </div>
+              <div className={styles.shopInfo}>
+                <small>{offer.category}</small>
+                <h3>{offer.title}</h3>
+                <p><del>{offer.oldPrice}</del> <strong>{offer.price}</strong></p>
+              </div>
+            </button>
           ))}
         </div>
       </section>

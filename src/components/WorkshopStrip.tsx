@@ -5,7 +5,20 @@ import styles from '@/components/WorkshopStrip.module.css'
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 
-const departments = ['Sofasets', 'Beds', 'Wardrobes', 'TV Stands', 'Centre Tables', 'Kitchens', 'Perfumes']
+const departments = [
+  'Best Sellers',
+  'Top 100 Offers',
+  'New Arrivals',
+  'Centre Tables',
+  'Chairs',
+  'Kitchens',
+  'Shoe Racks',
+  'Sofasets',
+  'TV Stands',
+  'Wardrobes',
+  'Beds',
+  'Perfumes',
+]
 
 export default function WorkshopStrip() {
   return (
