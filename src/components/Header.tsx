@@ -106,7 +106,7 @@ export default function Header() {
             <Search size={16} />
             <input
               type="text"
-              placeholder="Search"
+              placeholder="Search services..."
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               className={styles.searchInput}
