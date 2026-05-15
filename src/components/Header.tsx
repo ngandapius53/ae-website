@@ -9,14 +9,14 @@ import styles from '@/components/Header.module.css'
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/furniture', label: 'Shop Furniture' },
+  { href: '/furniture', label: 'Shop' },
   { href: '/decoration', label: 'Decoration' },
   { href: '/furniture', label: 'Sofasets' },
   { href: '/furniture', label: 'Beds' },
   { href: '/furniture', label: 'Wardrobes' },
-  { href: '/furniture', label: 'TV Stands' },
+  { href: '/furniture', label: 'TV' },
   { href: '/luxury-fragrance', label: 'Perfumes' },
-  { href: '/real-estate', label: 'Real Estate' },
+  { href: '/real-estate', label: 'Property' },
   { href: '/contact', label: 'Contact' },
   { href: '/about', label: 'About', isButton: true },
 ]
