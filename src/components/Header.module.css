@@ -89,15 +89,15 @@
   gap: 3px;
   background: rgba(255, 255, 255, 0.96);
   border: 1px solid rgba(233, 69, 96, 0.85);
-  padding: 2px 3px 2px 5px;
+  padding: 1px 3px 1px 5px;
   border-radius: 999px;
   color: #1a1a2e;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
 }
 
 .search svg {
-  width: 11px;
-  height: 11px;
+  width: 10px;
+  height: 10px;
   flex-shrink: 0;
   color: #e94560;
 }
@@ -125,7 +125,8 @@
   border-radius: 999px;
   font-size: 10px;
   font-weight: 600;
-  padding: 3px 5px;
+  padding: 2px 5px;
+  line-height: 1;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
@@ -437,7 +438,7 @@
 
   .search {
     width: 100%;
-    padding: 4px 6px 4px 8px;
+    padding: 3px 6px 3px 8px;
     border-color: #e94560;
   }
 
@@ -449,8 +450,8 @@
   .searchSubmit {
     display: inline-flex;
     align-items: center;
-    min-height: 26px;
-    padding: 4px 8px;
+    min-height: 22px;
+    padding: 3px 8px;
   }
 }
 
@@ -544,13 +545,13 @@
   }
 
   .search {
-    min-height: 32px;
+    min-height: 28px;
     border-width: 2px;
     background: #ffffff;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
   }
 
   .searchSubmit {
-    min-width: 38px;
+    min-width: 36px;
   }
 }
