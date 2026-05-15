@@ -101,6 +101,21 @@ export default function Header() {
           </span>
         </Link>
 
+        <div className={styles.utilityBar}>
+          <form className={`${styles.search} ${isMobileSearchOpen ? styles.searchOpen : ''}`} onSubmit={handleSearchSubmit}>
+            <Search size={16} />
+            <input
+              type="text"
+              placeholder="Search"
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              className={styles.searchInput}
+              aria-label="Search pages"
+            />
+            <button type="submit" className={styles.searchSubmit}>Go</button>
+          </form>
+        </div>
+
         <div className={styles.mobileActions} aria-label="Quick actions">
           <Link href="/" className={`${styles.languageLink} ${styles.languageActive}`} aria-label="Use English">
             EN
@@ -133,21 +148,6 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-
-        <div className={styles.utilityBar}>
-          <form className={`${styles.search} ${isMobileSearchOpen ? styles.searchOpen : ''}`} onSubmit={handleSearchSubmit}>
-            <Search size={16} />
-            <input
-              type="text"
-              placeholder="Search"
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              className={styles.searchInput}
-              aria-label="Search pages"
-            />
-            <button type="submit" className={styles.searchSubmit}>Go</button>
-          </form>
-        </div>
 
         <button
           className={styles.mobileToggle}
